@@ -1,13 +1,64 @@
-body {
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+}
+header{
+  background-color: #ff8a30;
+}
+header h2{
+  color: white;
+  margin-left: 40px;
+}
+.span{
+  color: cyan;
+}
+.searchSection{
+  background-color: #ebebeb;
+}
+.searchBar{
+  display: flex;
+  justify-content: center;
+}
+input[type='text']{
+  border: none;
+}
+.fa-search{
+  color: #ff8a30;
+  font-size: 25px;
+  left: -28px;
+  top: 5px;
+  position: relative;
+}
+button{
+  padding: 7px;
+  width: 70%;
+  color: white;
+  background-color: #ff8a30;
+  border: none;
+  margin: 1px;
+}
+.collection{
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid rgb(238, 234, 234);
+}
+b{
+  color: #ff8a30;
+}
+div.collection div.col{
+  border-right: 1px solid rgb(238, 234, 234);
+}
+.col p{
+  word-wrap: break-word
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.fa-map-marker{
+  font-size: 20px;
+  margin: 5px;
+}
+button.continue{
+  background-color: rgb(112, 223, 223);
+}
+.cardBx{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
