@@ -19,9 +19,9 @@ header h2{
   display: flex;
   justify-content: center;
 }
-input[type='text']{
+/* input[type='text']{
   border: none;
-}
+} */
 .fa-search{
   color: #ff8a30;
   font-size: 25px;
