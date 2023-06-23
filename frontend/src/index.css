@@ -58,3 +58,14 @@ h2{
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-weight: bold;
 }
+/*Seat style*/
+.seat{
+  /* width: 10px;
+  height: 10px; */
+  background-color: #44baba;
+  margin: 1px;
+  height: 35px;
+  width: 35px;
+  color: white;
+  text-align: center;
+}
