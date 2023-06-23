@@ -18,149 +18,149 @@ const SeatLayout = () => {
         <div className="seat-container">
           <div className="row">
             <Seat
-              seatNumber="A1"
+              seatNumber="1"
               className="seat"
-              isSelected={selectedSeats.includes("A1")}
+              isSelected={selectedSeats.includes("1")}
               onClick={handleSeatClick}
             />
             <Seat
-              seatNumber="A2"
+              seatNumber="2"
               className="seat"
-              isSelected={selectedSeats.includes("A2")}
+              isSelected={selectedSeats.includes("2")}
               onClick={handleSeatClick}
             />
             <Seat
-              seatNumber="A1"
+              seatNumber="3"
               className="seat"
-              isSelected={selectedSeats.includes("A1")}
+              isSelected={selectedSeats.includes("3")}
               onClick={handleSeatClick}
             />
             <Seat
-              seatNumber="A2"
+              seatNumber="4"
               className="seat"
-              isSelected={selectedSeats.includes("A2")}
+              isSelected={selectedSeats.includes("4")}
               onClick={handleSeatClick}
             />
             <Seat
-              seatNumber="A1"
+              seatNumber="5"
               className="seat"
-              isSelected={selectedSeats.includes("A1")}
+              isSelected={selectedSeats.includes("5")}
               onClick={handleSeatClick}
             />
             <Seat
-              seatNumber="A2"
+              seatNumber="6"
               className="seat"
-              isSelected={selectedSeats.includes("A2")}
+              isSelected={selectedSeats.includes("6")}
               onClick={handleSeatClick}
             />
             <Seat
-              seatNumber="A1"
+              seatNumber="7"
               className="seat"
-              isSelected={selectedSeats.includes("A1")}
+              isSelected={selectedSeats.includes("7")}
               onClick={handleSeatClick}
             />
             <Seat
-              seatNumber="A2"
+              seatNumber="8"
               className="seat"
-              isSelected={selectedSeats.includes("A2")}
+              isSelected={selectedSeats.includes("8")}
               onClick={handleSeatClick}
             />
             <Seat
-              seatNumber="A1"
+              seatNumber="9"
               className="seat"
-              isSelected={selectedSeats.includes("A1")}
+              isSelected={selectedSeats.includes("9")}
               onClick={handleSeatClick}
             />
             <Seat
-              seatNumber="A2"
+              seatNumber="10"
               className="seat"
-              isSelected={selectedSeats.includes("A2")}
+              isSelected={selectedSeats.includes("10")}
               onClick={handleSeatClick}
             />
             <Seat
-              seatNumber="A1"
+              seatNumber="11"
               className="seat"
-              isSelected={selectedSeats.includes("A1")}
+              isSelected={selectedSeats.includes("11")}
               onClick={handleSeatClick}
             />
             <Seat
-              seatNumber="A2"
+              seatNumber="12"
               className="seat"
-              isSelected={selectedSeats.includes("A2")}
+              isSelected={selectedSeats.includes("12")}
               onClick={handleSeatClick}
             />
           </div>
           <div className="row">
             <Seat
-              seatNumber="B1"
+              seatNumber="13"
               className="seat"
-              isSelected={selectedSeats.includes("B1")}
+              isSelected={selectedSeats.includes("13")}
               onClick={handleSeatClick}
             />
             <Seat
-              seatNumber="B2"
+              seatNumber="14"
               className="seat"
-              isSelected={selectedSeats.includes("B2")}
+              isSelected={selectedSeats.includes("14")}
               onClick={handleSeatClick}
             />
             <Seat
-              seatNumber="B1"
+              seatNumber="15"
               className="seat"
-              isSelected={selectedSeats.includes("B1")}
+              isSelected={selectedSeats.includes("15")}
               onClick={handleSeatClick}
             />
             <Seat
-              seatNumber="B2"
+              seatNumber="16"
               className="seat"
-              isSelected={selectedSeats.includes("B2")}
+              isSelected={selectedSeats.includes("16")}
               onClick={handleSeatClick}
             />
             <Seat
-              seatNumber="B1"
+              seatNumber="17"
               className="seat"
-              isSelected={selectedSeats.includes("B1")}
+              isSelected={selectedSeats.includes("17")}
               onClick={handleSeatClick}
             />
             <Seat
-              seatNumber="B2"
+              seatNumber="18"
               className="seat"
-              isSelected={selectedSeats.includes("B2")}
+              isSelected={selectedSeats.includes("18")}
               onClick={handleSeatClick}
             />
             <Seat
-              seatNumber="B1"
+              seatNumber="19"
               className="seat"
-              isSelected={selectedSeats.includes("B1")}
+              isSelected={selectedSeats.includes("19")}
               onClick={handleSeatClick}
             />
             <Seat
-              seatNumber="B2"
+              seatNumber="20"
               className="seat"
-              isSelected={selectedSeats.includes("B2")}
+              isSelected={selectedSeats.includes("20")}
               onClick={handleSeatClick}
             />
             <Seat
-              seatNumber="B1"
+              seatNumber="21"
               className="seat"
-              isSelected={selectedSeats.includes("B1")}
+              isSelected={selectedSeats.includes("21")}
               onClick={handleSeatClick}
             />
             <Seat
-              seatNumber="B2"
+              seatNumber="22"
               className="seat"
-              isSelected={selectedSeats.includes("B2")}
+              isSelected={selectedSeats.includes("22")}
               onClick={handleSeatClick}
             />
             <Seat
-              seatNumber="B1"
+              seatNumber="23"
               className="seat"
-              isSelected={selectedSeats.includes("B1")}
+              isSelected={selectedSeats.includes("23")}
               onClick={handleSeatClick}
             />
             <Seat
-              seatNumber="B2"
+              seatNumber="24"
               className="seat"
-              isSelected={selectedSeats.includes("B2")}
+              isSelected={selectedSeats.includes("24")}
               onClick={handleSeatClick}
             />
           </div>
@@ -168,75 +168,75 @@ const SeatLayout = () => {
         <div className="seat-container">
           <div className="row">
             <Seat
-              seatNumber="A1"
+              seatNumber="25"
+              className="seat"
+              isSelected={selectedSeats.includes("25")}
+              onClick={handleSeatClick}
+            />
+            <Seat
+              seatNumber="26"
+              className="seat"
+              isSelected={selectedSeats.includes("26")}
+              onClick={handleSeatClick}
+            />
+            <Seat
+              seatNumber="27"
+              className="seat"
+              isSelected={selectedSeats.includes("27")}
+              onClick={handleSeatClick}
+            />
+            <Seat
+              seatNumber="28"
+              className="seat"
+              isSelected={selectedSeats.includes("28")}
+              onClick={handleSeatClick}
+            />
+            <Seat
+              seatNumber="29"
+              className="seat"
+              isSelected={selectedSeats.includes("29")}
+              onClick={handleSeatClick}
+            />
+            <Seat
+              seatNumber="30"
+              className="seat"
+              isSelected={selectedSeats.includes("30")}
+              onClick={handleSeatClick}
+            />
+            <Seat
+              seatNumber="31"
+              className="seat"
+              isSelected={selectedSeats.includes("31")}
+              onClick={handleSeatClick}
+            />
+            <Seat
+              seatNumber="32"
+              className="seat"
+              isSelected={selectedSeats.includes("32")}
+              onClick={handleSeatClick}
+            />
+            <Seat
+              seatNumber="A21"
               className="seat"
               isSelected={selectedSeats.includes("A1")}
               onClick={handleSeatClick}
             />
             <Seat
-              seatNumber="A2"
+              seatNumber="33"
               className="seat"
-              isSelected={selectedSeats.includes("A2")}
+              isSelected={selectedSeats.includes("33")}
               onClick={handleSeatClick}
             />
             <Seat
-              seatNumber="A1"
+              seatNumber="34"
               className="seat"
-              isSelected={selectedSeats.includes("A1")}
+              isSelected={selectedSeats.includes("34")}
               onClick={handleSeatClick}
             />
             <Seat
-              seatNumber="A2"
+              seatNumber="35"
               className="seat"
-              isSelected={selectedSeats.includes("A2")}
-              onClick={handleSeatClick}
-            />
-            <Seat
-              seatNumber="A1"
-              className="seat"
-              isSelected={selectedSeats.includes("A1")}
-              onClick={handleSeatClick}
-            />
-            <Seat
-              seatNumber="A2"
-              className="seat"
-              isSelected={selectedSeats.includes("A2")}
-              onClick={handleSeatClick}
-            />
-            <Seat
-              seatNumber="A1"
-              className="seat"
-              isSelected={selectedSeats.includes("A1")}
-              onClick={handleSeatClick}
-            />
-            <Seat
-              seatNumber="A2"
-              className="seat"
-              isSelected={selectedSeats.includes("A2")}
-              onClick={handleSeatClick}
-            />
-            <Seat
-              seatNumber="A1"
-              className="seat"
-              isSelected={selectedSeats.includes("A1")}
-              onClick={handleSeatClick}
-            />
-            <Seat
-              seatNumber="A2"
-              className="seat"
-              isSelected={selectedSeats.includes("A2")}
-              onClick={handleSeatClick}
-            />
-            <Seat
-              seatNumber="A1"
-              className="seat"
-              isSelected={selectedSeats.includes("A1")}
-              onClick={handleSeatClick}
-            />
-            <Seat
-              seatNumber="A2"
-              className="seat"
-              isSelected={selectedSeats.includes("A2")}
+              isSelected={selectedSeats.includes("35")}
               onClick={handleSeatClick}
             />
           </div>
@@ -245,162 +245,165 @@ const SeatLayout = () => {
           <div className="seat-container">
             <div className="row">
               <Seat
-                seatNumber="A1"
+                seatNumber="36"
                 className="seat"
-                isSelected={selectedSeats.includes("A1")}
+                isSelected={selectedSeats.includes("36")}
                 onClick={handleSeatClick}
               />
               <Seat
-                seatNumber="A2"
+                seatNumber="37"
                 className="seat"
-                isSelected={selectedSeats.includes("A2")}
+                isSelected={selectedSeats.includes("37")}
                 onClick={handleSeatClick}
               />
               <Seat
-                seatNumber="A1"
+                seatNumber="38"
                 className="seat"
-                isSelected={selectedSeats.includes("A1")}
+                isSelected={selectedSeats.includes("38")}
                 onClick={handleSeatClick}
               />
               <Seat
-                seatNumber="A2"
+                seatNumber="39"
                 className="seat"
-                isSelected={selectedSeats.includes("A2")}
+                isSelected={selectedSeats.includes("39")}
                 onClick={handleSeatClick}
               />
               <Seat
-                seatNumber="A1"
+                seatNumber="40"
                 className="seat"
-                isSelected={selectedSeats.includes("A1")}
+                isSelected={selectedSeats.includes("40")}
                 onClick={handleSeatClick}
               />
               <Seat
-                seatNumber="A2"
+                seatNumber="41"
                 className="seat"
-                isSelected={selectedSeats.includes("A2")}
+                isSelected={selectedSeats.includes("41")}
                 onClick={handleSeatClick}
               />
               <Seat
-                seatNumber="A1"
+                seatNumber="42"
                 className="seat"
-                isSelected={selectedSeats.includes("A1")}
+                isSelected={selectedSeats.includes("42")}
                 onClick={handleSeatClick}
               />
               <Seat
-                seatNumber="A2"
+                seatNumber="43"
                 className="seat"
-                isSelected={selectedSeats.includes("A2")}
+                isSelected={selectedSeats.includes("43")}
                 onClick={handleSeatClick}
               />
               <Seat
-                seatNumber="A1"
+                seatNumber="44"
                 className="seat"
-                isSelected={selectedSeats.includes("A1")}
+                isSelected={selectedSeats.includes("44")}
                 onClick={handleSeatClick}
               />
               <Seat
-                seatNumber="A2"
+                seatNumber="45"
                 className="seat"
-                isSelected={selectedSeats.includes("A2")}
+                isSelected={selectedSeats.includes("45")}
                 onClick={handleSeatClick}
               />
               <Seat
-                seatNumber="A1"
+                seatNumber="46"
                 className="seat"
-                isSelected={selectedSeats.includes("A1")}
+                isSelected={selectedSeats.includes("46")}
                 onClick={handleSeatClick}
               />
               <Seat
-                seatNumber="A2"
+                seatNumber="47"
                 className="seat"
-                isSelected={selectedSeats.includes("A2")}
+                isSelected={selectedSeats.includes("47")}
                 onClick={handleSeatClick}
               />
             </div>
             <div className="row">
               <Seat
-                seatNumber="B1"
+                seatNumber="48"
                 className="seat"
-                isSelected={selectedSeats.includes("B1")}
+                isSelected={selectedSeats.includes("48")}
                 onClick={handleSeatClick}
               />
               <Seat
-                seatNumber="B2"
+                seatNumber="49"
                 className="seat"
-                isSelected={selectedSeats.includes("B2")}
+                isSelected={selectedSeats.includes("49")}
                 onClick={handleSeatClick}
               />
               <Seat
-                seatNumber="B1"
+                seatNumber="50"
                 className="seat"
-                isSelected={selectedSeats.includes("B1")}
+                isSelected={selectedSeats.includes("50")}
                 onClick={handleSeatClick}
               />
               <Seat
-                seatNumber="B2"
+                seatNumber="51"
                 className="seat"
-                isSelected={selectedSeats.includes("B2")}
+                isSelected={selectedSeats.includes("51")}
                 onClick={handleSeatClick}
               />
               <Seat
-                seatNumber="B1"
+                seatNumber="52"
                 className="seat"
-                isSelected={selectedSeats.includes("B1")}
+                isSelected={selectedSeats.includes("52")}
                 onClick={handleSeatClick}
               />
               <Seat
-                seatNumber="B2"
+                seatNumber="53"
                 className="seat"
-                isSelected={selectedSeats.includes("B2")}
+                isSelected={selectedSeats.includes("53")}
                 onClick={handleSeatClick}
               />
               <Seat
-                seatNumber="B1"
+                seatNumber="54"
                 className="seat"
-                isSelected={selectedSeats.includes("B1")}
+                isSelected={selectedSeats.includes("54")}
                 onClick={handleSeatClick}
               />
               <Seat
-                seatNumber="B2"
+                seatNumber="55"
                 className="seat"
-                isSelected={selectedSeats.includes("B2")}
+                isSelected={selectedSeats.includes("55")}
                 onClick={handleSeatClick}
               />
               <Seat
-                seatNumber="B1"
+                seatNumber="56"
                 className="seat"
-                isSelected={selectedSeats.includes("B1")}
+                isSelected={selectedSeats.includes("56")}
                 onClick={handleSeatClick}
               />
               <Seat
-                seatNumber="B2"
+                seatNumber="57"
                 className="seat"
-                isSelected={selectedSeats.includes("B2")}
+                isSelected={selectedSeats.includes("57")}
                 onClick={handleSeatClick}
               />
               <Seat
-                seatNumber="B1"
+                seatNumber="58"
                 className="seat"
-                isSelected={selectedSeats.includes("B1")}
+                isSelected={selectedSeats.includes("58")}
                 onClick={handleSeatClick}
               />
               <Seat
-                seatNumber="B2"
+                seatNumber="59"
                 className="seat"
-                isSelected={selectedSeats.includes("B2")}
+                isSelected={selectedSeats.includes("59")}
                 onClick={handleSeatClick}
               />
             </div>
           </div>
         </div>
       </div>
-      <div>
+      {/* <div>
         <h3>Selected Seats:</h3>
         <ul>
           {selectedSeats.map((seat) => (
             <li key={seat}>{seat}</li>
           ))}
         </ul>
+      </div> */}
+      <div>
+        <h2>Total Amount : 568 * {selectedSeats.length} : {568 * parseInt(selectedSeats.length)}</h2>
       </div>
     </div>
   );
@@ -408,9 +411,14 @@ const SeatLayout = () => {
 
 const Seat = ({ seatNumber, isSelected, onClick }) => {
   const seatClass = isSelected ? "seat selected" : "seat";
+  const seatStyle = isSelected ? { backgroundColor: "blue" } : {};
 
   return (
-    <div className={seatClass} onClick={() => onClick(seatNumber)}>
+    <div
+      className={seatClass}
+      style={seatStyle}
+      onClick={() => onClick(seatNumber)}
+    >
       {seatNumber}
     </div>
   );
