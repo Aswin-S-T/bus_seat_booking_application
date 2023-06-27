@@ -26,7 +26,7 @@ function HomeScreen() {
         <div>
           <h4>KSRTC (Kerala) Bus Routes & Timings</h4>
           <div className="mt-5">
-            <Table />
+            {/* <Table /> */}
             <DatatablePage />
           </div>
         </div>
