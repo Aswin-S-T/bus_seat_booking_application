@@ -34,7 +34,7 @@ function Table() {
                 </td>
                 <td>{bus.time}</td>
                 <td>
-                  <a href="/details">
+                  <a href={`/details/${bus._id}`}>
                     <button className="bookBtn">Book Now</button>
                   </a>
                 </td>

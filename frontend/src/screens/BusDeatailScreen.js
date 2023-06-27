@@ -1,17 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SeatLayout from "../components/SeatLayout";
 import StripeCheckoutButton from "../components/StripeCheckoutButton";
+import data from "../data/data";
+import { useParams } from "react-router-dom";
 
 function BusDeatailScreen() {
-  
+  const [busDetails, setBusDetails] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const { id } = useParams();
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await data.buses;
+      let details = res.find((bus) => bus._id == id);
+      if (details) {
+        setBusDetails(details);
+      }
+    };
+    fetchData();
+  }, []);
+
   return (
     <div className="container">
       <div className="row">
         <div className="col-md-6">
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkZJt8Nu0j2mfkpo94BILGm3VM0h2mG2DCtA&usqp=CAU"
-            className="w-100 mt-5"
-          />
+          <img src={busDetails?.imageUrl} className="w-100 mt-5" />
         </div>
         <div className="col-md-6">
           <div>
@@ -58,7 +70,6 @@ function BusDeatailScreen() {
             this, you can't change the option)
           </div>
           <div>
-            
             <StripeCheckoutButton price={232} />
           </div>
         </div>

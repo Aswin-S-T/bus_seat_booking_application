@@ -1,6 +1,7 @@
 const data = {
   buses: [
     {
+      _id: "1",
       time: "12:10 AM",
       bus_name: "KSRTC Delux",
       from: "Trivandrum",
@@ -11,6 +12,7 @@ const data = {
       rate: "125",
     },
     {
+      _id: "2",
       time: "01:20 AM",
       bus_name: "CERA",
       from: "Kottayam",
@@ -20,6 +22,7 @@ const data = {
       rate: "170",
     },
     {
+      _id: "3",
       time: "02:00 AM",
       bus_name: "KSRTC Minnal",
       from: "Trivandrum",
@@ -29,6 +32,7 @@ const data = {
       rate: "180",
     },
     {
+      _id: "4",
       time: "02:45 AM",
       bus_name: "KSRTC SuperFast",
       from: "Ernakulam",
@@ -39,6 +43,7 @@ const data = {
       rate: "",
     },
     {
+      _id: "4",
       time: "03:00 AM",
       bus_name: "KSRTC Garuda",
       from: "Trivandrum",
@@ -49,6 +54,7 @@ const data = {
       rate: "03:40",
     },
     {
+      _id: "5",
       time: "06:00 AM",
       bus_name: "KSRTC Minnal",
       from: "Trivandrum",
@@ -59,6 +65,7 @@ const data = {
       rate: "200",
     },
     {
+      _id: "6",
       time: "08:30 AM",
       bus_name: "KSRTC SuperFast",
       from: "Ernakulam",
@@ -69,6 +76,7 @@ const data = {
       rate: "180",
     },
     {
+      _id: "7",
       time: "09:10 AM",
       bus_name: "KSRTC Lowfloor",
       from: "Ernakulam",
@@ -79,6 +87,7 @@ const data = {
       rate: "200",
     },
     {
+      _id: "8",
       time: "10:15 AM",
       bus_name: "KSRTC SuperFast",
       from: "Trissur",
@@ -89,6 +98,7 @@ const data = {
       rate: "150",
     },
     {
+      _id: "9",
       time: "11:30 AM",
       bus_name: "Kallada",
       from: "Trivandrum",

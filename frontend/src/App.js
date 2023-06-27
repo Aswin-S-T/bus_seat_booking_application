@@ -14,7 +14,7 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<HomeScreen />} />
-            <Route path="/details" element={<BusDeatailScreen />} />
+            <Route path="/details/:id" element={<BusDeatailScreen />} />
           </Routes>
         </main>
 
