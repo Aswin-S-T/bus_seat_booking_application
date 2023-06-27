@@ -1,4 +1,5 @@
 import React from "react";
+import DatatablePage from "../components/DatatablePage";
 import SearchComponents from "../components/SearchComponents";
 import Table from "../components/Table";
 
@@ -26,6 +27,7 @@ function HomeScreen() {
           <h4>KSRTC (Kerala) Bus Routes & Timings</h4>
           <div className="mt-5">
             <Table />
+            <DatatablePage />
           </div>
         </div>
       </section>
