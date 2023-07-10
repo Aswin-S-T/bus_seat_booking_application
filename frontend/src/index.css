@@ -2,8 +2,13 @@
   margin: 0;
   padding: 0;
 }
+body{
+  background-color: aliceblue;
+}
 header{
-  background-color: #ff317e;
+  /* background-color: #ff317e; */
+  /* background-color: #112339; */
+  background-color: #fbfbfb;
   width: 100%;
 }
 .navbar-brand{
@@ -12,6 +17,9 @@ header{
 }
 .box{
   border-radius: 10px;
+}
+h1{
+  color: #ff317e;
 }
 button.searchBtn{
   background-color: #ff317e;
@@ -76,6 +84,7 @@ h2{
 }
 a{
   text-decoration: none;
+  color: #111;
 }
 .vertical-tabs {
   display: flex;
@@ -87,16 +96,21 @@ a{
 .vertical-tab-list {
   display: flex;
   flex-direction: column;
-  border-right: 1px solid #ccc;
+  /* border-right: 1px solid #ccc; */
   width: 20%;
   height: 100%;
-  background-color: #002244;
-  color: white;
+  /* background-color: #002244; */
+  /* background-color: #142b42; */
+  background-color: white;
+  color: rgb(59, 38, 38);
+  font-size: 19px;
+  font-weight: 500;
+  font-family: sans-serif;
 }
 
 .vertical-tab {
   padding: 10px;
-  border-bottom: 1px solid #ccc;
+  /* border-bottom: 1px solid #ccc; */
 }
 
 .vertical-tab:last-child {
@@ -108,34 +122,46 @@ a{
   padding: 10px;
 }
 li.react-tabs__tab--selected{
-  background-color: #6F00FF;
+  /* background-color: #6F00FF; */
+  /* background-color: #1c4e6d; */
+  background-color: darkcyan;
   color: white;
 }
 ul li{
   list-style: none;
+  margin-top: 20px;
 }
 .route-list{
   background-color: #ff317e;
   padding: 2px;
   margin: 5px;
-  color: white;
+  /* color: white; */
   border-radius: 10px;
 }
 .route-list button{
   background: transparent;
   border: none;
-  color: white;
+  /* color: white; */
 }
 .submitBtn{
   background-color: #ff317e;
   border: none;
   padding: 8px;
-  border-radius: 10px;
+  border-radius: 20px;
   color: white;
+  width: 100%;
 }
 .dashboard{
   background-color: white;
   border-radius: 10px;
   margin-top: 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.card{
+  padding: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
+}
+.react-tabs__tab-panel{
+  background-color: whitesmoke;
 }
