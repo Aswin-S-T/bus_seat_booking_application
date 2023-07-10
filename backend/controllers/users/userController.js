@@ -3,6 +3,7 @@ const bcrypt = require("bcrypt");
 let { objectId } = require("mongoose");
 
 const jwt = require("jsonwebtoken");
+const Bus = require("../../models/busModel");
 
 const JWT_SECRET = process.env.JWT_SECRET || "something secret";
 
@@ -72,6 +73,13 @@ module.exports = {
         resolve(successResponse);
       }
       resolve(errorResponse);
+    });
+  },
+  addBusDetails: (busData) => {
+    return new Promise(async (resolve, reject) => {
+      await Bus.create(busData).then(() => {
+        resolve(successResponse);
+      });
     });
   },
 };

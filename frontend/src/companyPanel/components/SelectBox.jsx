@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 
-const SelectBox = () => {
+const SelectBox = ({ data }) => {
   const [selectedOptions, setSelectedOptions] = useState([]);
-
   const handleSelect = (e) => {
     const selectedOption = e.target.value;
     setSelectedOptions((prevOptions) => [...prevOptions, selectedOption]);
@@ -17,16 +16,24 @@ const SelectBox = () => {
   return (
     <div>
       <select onChange={handleSelect} className="form-control col-md-4">
-        <option value="">Select an option</option>
-        <option value="Option 1">Option 1</option>
-        <option value="Option 2">Option 2</option>
-        <option value="Option 3">Option 3</option>
+        <option value="">Select routes</option>
+        {data &&
+          data.length > 0 &&
+          data.map((route) => <option value={route}>{route}</option>)}
       </select>
       <ul className="row mt-4">
         {selectedOptions.map((option, index) => (
-          <li key={index} className="route-list">
+          <li key={index} className="route-list text-white p-1">
             {option}
-            <button onClick={() => handleDelete(option)}>X</button>
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                handleDelete(option);
+              }}
+              className="m-1 text-white"
+            >
+              X
+            </button>
           </li>
         ))}
       </ul>

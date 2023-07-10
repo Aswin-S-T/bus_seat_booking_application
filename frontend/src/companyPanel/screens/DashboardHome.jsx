@@ -16,7 +16,9 @@ function DashboardHome() {
             <h1 className="text-center">10 / 52</h1>
           </div>
         </div>
-        <div className="col-md-4"></div>
+        <div className="col-md-4">
+          <div className="card p-2"></div>
+        </div>
       </div>
     </div>
   );
