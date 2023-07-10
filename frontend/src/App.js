@@ -21,7 +21,7 @@ function App() {
             {/* Company related Routes */}
             <Route path="/company" element={<Dashboard />} />
             <Route path="/login" element={<LoginScreen />} />
-            <Route path="/signin" element={<RegisterScreen />} />
+            <Route path="/signup" element={<RegisterScreen />} />
           </Routes>
         </main>
 

@@ -18,6 +18,8 @@
     "nodemon": "^2.0.22"
   },
   "dependencies": {
+    "bcrypt": "^5.1.0",
+    "jsonwebtoken": "^9.0.1",
     "nodemailer": "^6.9.3",
     "pdf-lib": "^1.17.1"
   }
