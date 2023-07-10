@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomeScreen from "./screens/HomeScreen";
 import BusDeatailScreen from "./screens/BusDeatailScreen";
+import Dashboard from "./companyPanel/screens/Dashboard";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomeScreen />} />
             <Route path="/details/:id" element={<BusDeatailScreen />} />
+            <Route path="/company" element={<Dashboard />} />
           </Routes>
         </main>
 

@@ -77,3 +77,65 @@ h2{
 a{
   text-decoration: none;
 }
+.vertical-tabs {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  background-color: whitesmoke;
+}
+
+.vertical-tab-list {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #ccc;
+  width: 20%;
+  height: 100%;
+  background-color: #002244;
+  color: white;
+}
+
+.vertical-tab {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.vertical-tab:last-child {
+  border-bottom: none;
+}
+
+.react-tabs__tab-panel {
+  flex: 1;
+  padding: 10px;
+}
+li.react-tabs__tab--selected{
+  background-color: #6F00FF;
+  color: white;
+}
+ul li{
+  list-style: none;
+}
+.route-list{
+  background-color: #ff317e;
+  padding: 2px;
+  margin: 5px;
+  color: white;
+  border-radius: 10px;
+}
+.route-list button{
+  background: transparent;
+  border: none;
+  color: white;
+}
+.submitBtn{
+  background-color: #ff317e;
+  border: none;
+  padding: 8px;
+  border-radius: 10px;
+  color: white;
+}
+.dashboard{
+  background-color: white;
+  border-radius: 10px;
+  margin-top: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
