@@ -19,7 +19,7 @@ const StripeCheckoutButton = ({ price }) => {
       amount={priceForStripe}
       currency="USD"
       token={onToken}
-      stripeKey="YOUR_STRIPE_PUBLISHABLE_KEY"
+      stripeKey="sk_test_51MMkh2SJhTOGezu4nSuzWaBlkYpkGNA9QnsfKBxYOYp7kaTHewlgj2BNaog6Ltgtch4lkjadRAH1q0jPcwL8r4iS00P2y0ap92"
     />
   );
 };

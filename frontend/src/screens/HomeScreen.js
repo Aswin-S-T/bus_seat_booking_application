@@ -10,8 +10,8 @@ function HomeScreen() {
         <div className="row">
           <div className="col-md-6">
             <img
-              className="w-100 bannerImg"
-              src="https://nectarbits.com/img/Latest/ShuttleService/shuttle_fleet.png"
+              className="w-100 bannerImg mt-5"
+              src="https://ns.yatracdn.com/common/images/fresco/fresco-footer-images/corona/bus-guidlines/Artboard%207%20copy-8.png"
             />
           </div>
           <div className="col-md-6 mt-5">

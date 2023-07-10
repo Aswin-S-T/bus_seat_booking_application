@@ -14,7 +14,7 @@ function Header() {
             }}
           >
             <i className="fa fa-bus m-2" style={{ color: "#444" }}></i>
-            City Bus Dashboard
+            City Bus
           </a>
         </span>
       </nav>

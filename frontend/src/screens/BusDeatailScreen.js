@@ -83,9 +83,7 @@ function BusDeatailScreen() {
               <input type="checkbox" /> Continue with payment (Once you clicked
               this, you can't change the option)
             </div>
-            <div>
-              <StripeCheckoutButton price={232} />
-            </div>
+            <div>{/* <StripeCheckoutButton price={232} /> */}</div>
           </div>
         </div>
       )}
