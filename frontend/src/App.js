@@ -3,6 +3,9 @@ import Header from "./components/Header";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomeScreen from "./screens/HomeScreen";
 import BusDeatailScreen from "./screens/BusDeatailScreen";
+import Dashboard from "./companyPanel/screens/Dashboard";
+import LoginScreen from "./companyPanel/screens/LoginScreen";
+import RegisterScreen from "./companyPanel/screens/RegisterScreen";
 
 function App() {
   return (
@@ -15,6 +18,10 @@ function App() {
           <Routes>
             <Route path="/" element={<HomeScreen />} />
             <Route path="/details/:id" element={<BusDeatailScreen />} />
+            {/* Company related Routes */}
+            <Route path="/company" element={<Dashboard />} />
+            <Route path="/login" element={<LoginScreen />} />
+            <Route path="/signin" element={<RegisterScreen />} />
           </Routes>
         </main>
 

@@ -4,9 +4,17 @@ function Header() {
   return (
     <div>
       <nav class="navbar navbar-light">
-        <span class="navbar-brand mb-0 h1 text-white">
-          <a href="/" style={{ textDecoration: "none", color: "white" }}>
-            City Bus
+        <span class="navbar-brand mb-0 h1">
+          <a
+            href="/"
+            style={{
+              textDecoration: "none",
+              color: "#ff317e",
+              fontWeight: "bold",
+            }}
+          >
+            <i className="fa fa-bus m-2" style={{ color: "#444" }}></i>
+            City Bus Dashboard
           </a>
         </span>
       </nav>
