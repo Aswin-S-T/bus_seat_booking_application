@@ -9,6 +9,7 @@ const SeatLayout = () => {
     } else {
       setSelectedSeats([...selectedSeats, seatNumber]);
     }
+    JSON.stringify(localStorage.setItem("selectedSeats", selectedSeats));
   };
 
   return (
@@ -394,16 +395,12 @@ const SeatLayout = () => {
           </div>
         </div>
       </div>
-      {/* <div>
-        <h3>Selected Seats:</h3>
-        <ul>
-          {selectedSeats.map((seat) => (
-            <li key={seat}>{seat}</li>
-          ))}
-        </ul>
-      </div> */}
+
       <div>
-        <h2>Total Amount : 568 * {selectedSeats.length} : {568 * parseInt(selectedSeats.length)}</h2>
+        <h2>
+          Total Amount : 568 * {selectedSeats.length} :{" "}
+          {568 * parseInt(selectedSeats.length)}
+        </h2>
       </div>
     </div>
   );

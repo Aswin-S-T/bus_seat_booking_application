@@ -171,4 +171,12 @@ userRouter.get("/get-my-bus/:companyId", async (req, res) => {
   });
 });
 
+userRouter.post("/book-ticket", async (req, res) => {
+  let bookingData = req.body;
+  console.log(
+    "BOOKING DATA==============",
+    bookingData ? bookingData : "NO BOOKING DATA"
+  );
+});
+
 module.exports = userRouter;
