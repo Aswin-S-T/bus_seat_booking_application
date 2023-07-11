@@ -7,6 +7,7 @@ import LoadingBox from "../components/LoadingBox";
 import ErrorBox from "../components/ErrorBox";
 import axios from "axios";
 import { BACKEND_URL } from "../constats/Api";
+import InvoiceForm from "../InvoiceForm";
 
 function BusDeatailScreen() {
   const [loading, setLoading] = useState(false);
@@ -84,6 +85,7 @@ function BusDeatailScreen() {
               this, you can't change the option)
             </div>
             <div>{/* <StripeCheckoutButton price={232} /> */}</div>
+            <InvoiceForm />
           </div>
         </div>
       )}
