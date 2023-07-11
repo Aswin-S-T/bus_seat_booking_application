@@ -1,5 +1,9 @@
 const express = require("express");
-const { getAllBus, getBusDetails } = require("../controllers/busController");
+const {
+  getAllBus,
+  getBusDetails,
+  getBusDetailsofCompany,
+} = require("../controllers/busController");
 const {
   register,
   login,
@@ -157,6 +161,13 @@ userRouter.get("/send-invoice", async (req, res) => {
       console.log("Email sent: " + info.response);
       res.send("Email sent successfully!");
     }
+  });
+});
+
+userRouter.get("/get-my-bus/:companyId", async (req, res) => {
+  let companyId = req.params.companyId;
+  getBusDetailsofCompany(companyId).then((result) => {
+    res.send(result);
   });
 });
 

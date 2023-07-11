@@ -28,4 +28,16 @@ module.exports = {
       });
     });
   },
+  getBusDetailsofCompany: (companyId) => {
+    return new Promise(async (resolve, reject) => {
+      await Bus.find({ company_id: companyId }).then((response) => {
+        if (response) {
+          successResponse.data = response;
+          resolve(successResponse);
+        } else {
+          resolve(errorResponse);
+        }
+      });
+    });
+  },
 };
