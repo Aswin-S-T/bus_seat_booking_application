@@ -13,12 +13,12 @@ const userRouter = require("./routes/userRouter");
 const companyRouter = require("./routes/companies/comapnyRouter");
 db.connect();
 
-const corsOptions = {
-  origin: "https://64afc6878ddcda4252e3359c--dancing-blini-b82d38.netlify.app/", // Replace with your frontend URL
-  optionsSuccessStatus: 200, // Some legacy browsers (e.g., IE11) choke on 204
-};
+// const corsOptions = {
+//   origin: "https://64afc6878ddcda4252e3359c--dancing-blini-b82d38.netlify.app/", // Replace with your frontend URL
+//   optionsSuccessStatus: 200, // Some legacy browsers (e.g., IE11) choke on 204
+// };
 
-app.use(cors(corsOptions));
+app.use(cors());
 
 
 // Middlewares
