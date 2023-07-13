@@ -17,7 +17,10 @@ function DashboardHome() {
           </div>
         </div>
         <div className="col-md-4">
-          <div className="card p-2"></div>
+          <div className="card p-2">
+            <h5>Total Buses</h5>
+            <h1 className="text-center">4</h1>
+          </div>
         </div>
       </div>
     </div>

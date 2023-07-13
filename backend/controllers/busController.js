@@ -20,6 +20,21 @@ module.exports = {
     return new Promise(async (resolve, reject) => {
       await Bus.findOne({ _id: busId }).then((response) => {
         if (response) {
+          if (!response.bookedSeats) {
+            response.bookedSeats = []
+          }
+          successResponse.data = response;
+          resolve(successResponse);
+        } else {
+          resolve(errorResponse);
+        }
+      });
+    });
+  },
+  getBusDetailsofCompany: (companyId) => {
+    return new Promise(async (resolve, reject) => {
+      await Bus.find({ company_id: companyId }).then((response) => {
+        if (response) {
           successResponse.data = response;
           resolve(successResponse);
         } else {
