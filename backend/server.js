@@ -24,7 +24,7 @@ db.connect();
 app.use(
   cors({
     origin:
-      "https://64afc6878ddcda4252e3359c--dancing-blini-b82d38.netlify.app/", // Replace with your allowed origin
+      "https://64afc8cdccf19b00a45aeabd--extraordinary-pegasus-04b5a7.netlify.app/", // Replace with your allowed origin
     methods: ["GET", "POST"], // Replace with your allowed methods
     allowedHeaders: ["Content-Type", "Authorization"], // Replace with your allowed headers
   })
