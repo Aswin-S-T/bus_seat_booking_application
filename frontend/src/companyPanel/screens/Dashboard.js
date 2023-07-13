@@ -1,12 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-
+import { useNavigate } from "react-router-dom";
 import "react-tabs/style/react-tabs.css";
 import ListBus from "../../components/ListBus";
 import AddBus from "./AddBus";
 import DashboardHome from "./DashboardHome";
 
 function Dashboard() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    checkUserDetails();
+  }, []);
+
+  const checkUserDetails = () => {
+    const user = localStorage.getItem("user");
+    if (!user) {
+      navigate("/login");
+    }
+  };
+
   return (
     <div>
       <Tabs className="vertical-tabs">
