@@ -6,6 +6,7 @@ import BusDeatailScreen from "./screens/BusDeatailScreen";
 import Dashboard from "./companyPanel/screens/Dashboard";
 import LoginScreen from "./companyPanel/screens/LoginScreen";
 import RegisterScreen from "./companyPanel/screens/RegisterScreen";
+import UserRegister from "./components/UserRegister";
 
 function App() {
   return (
@@ -22,6 +23,8 @@ function App() {
             <Route path="/company" element={<Dashboard />} />
             <Route path="/login" element={<LoginScreen />} />
             <Route path="/signup" element={<RegisterScreen />} />
+            {/* User related routes */}
+            <Route path="/register" element={<UserRegister />} />
           </Routes>
         </main>
 
