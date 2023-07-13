@@ -186,7 +186,9 @@ function BusDeatailScreen() {
                     </div>
                   </div>
                 </div>
-                <SeatLayout booked={bus.bookedSeats} />
+                <div className="container-fluid">
+                  <SeatLayout booked={bus.bookedSeats} />
+                </div>
                 <div className="mt-3">
                   <input type="checkbox" required={true} /> Continue with
                   payment (Once you clicked this, you can't change the option)
