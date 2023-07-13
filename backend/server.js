@@ -14,8 +14,7 @@ const companyRouter = require("./routes/companies/comapnyRouter");
 db.connect();
 
 const corsOptions = {
-  origin:
-    "https://64afc2c090cb4b3dc09a9398--graceful-parfait-655225.netlify.app/", // Replace with your frontend URL
+  origin: "https://64afc6878ddcda4252e3359c--dancing-blini-b82d38.netlify.app/", // Replace with your frontend URL
   optionsSuccessStatus: 200, // Some legacy browsers (e.g., IE11) choke on 204
 };
 
