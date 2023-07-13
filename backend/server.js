@@ -18,7 +18,18 @@ db.connect();
 //   optionsSuccessStatus: 200, // Some legacy browsers (e.g., IE11) choke on 204
 // };
 
-app.use(cors());
+// app.use(cors());
+
+// Enable CORS with specific options
+app.use(
+  cors({
+    origin:
+      "https://64afc6878ddcda4252e3359c--dancing-blini-b82d38.netlify.app/", // Replace with your allowed origin
+    methods: ["GET", "POST"], // Replace with your allowed methods
+    allowedHeaders: ["Content-Type", "Authorization"], // Replace with your allowed headers
+  })
+);
+
 
 
 // Middlewares
