@@ -70,7 +70,7 @@ h2{
 .seat{
   /* width: 10px;
   height: 10px; */
-  background-color: #44baba;
+  background-color: #44ba54;
   margin: 1px;
   height: 35px;
   width: 35px;
@@ -176,4 +176,26 @@ ul li{
   justify-content: center;
   align-items: center;
   float:right;
+}
+.booked{
+  background-color: red;
+}
+button{
+  border: none;
+}
+.available-seat,
+.booked-seat,
+.selected-seat{
+  width: 54px;
+  height: 18px;
+  
+}
+.available-seat{
+  background-color: #44ba54;
+}
+.booked-seat{
+  background-color: yellow;
+}
+.selected-seat{
+  background-color: blue;
 }

@@ -8,6 +8,7 @@ import ErrorBox from "../components/ErrorBox";
 import axios from "axios";
 import { BACKEND_URL } from "../constats/Api";
 import InvoiceForm from "../InvoiceForm";
+import Swal from "sweetalert2";
 
 function BusDeatailScreen() {
   const [loading, setLoading] = useState(false);
@@ -23,6 +24,8 @@ function BusDeatailScreen() {
   const [date, setDate] = useState("");
 
   const [selectedSeats, setSelectedSeats] = useState([]);
+
+  const [bookedSeats,setBookedSeats] = useState([])
 
   const handleSeatClick = (seatNumber) => {
     if (selectedSeats.includes(seatNumber)) {
@@ -40,6 +43,7 @@ function BusDeatailScreen() {
         if (res && res.status == 200) {
           setLoading(false);
           setBuses(res.data.data);
+          setBookedSeats(res.data.data.bookedSeats);
         }
       } catch (error) {
         setError(true);
@@ -51,19 +55,45 @@ function BusDeatailScreen() {
   const bookSeat = async (e) => {
     e.preventDefault();
     let selected_seats = localStorage.getItem("selectedSeats");
-    let bookingData = {
-      fullName,
-      email,
-      startingPoint,
-      destinationPoint,
-      amount: 100,
-      date,
-      selectedSeats: selected_seats,
-    };
-    let res = await axios.post(
-      `${BACKEND_URL}/api/v1/user/book-ticket`,
-      bookingData
-    );
+    if (!selected_seats || selected_seats.trim()=="") {
+      Swal.fire({
+        title: "Error!",
+        text: "Please select atleast one seat",
+        icon: "error",
+        confirmButtonText: "Ok",
+      }).then(() => {
+        setLoading(false);
+      });
+    } else {
+      let bookingData = {
+        busId: id,
+        fullName,
+        email,
+        startingPoint,
+        destinationPoint,
+        amount: 100,
+        date,
+        selectedSeats: selected_seats,
+      };
+      let res = await axios.post(
+        `${BACKEND_URL}/api/v1/user/book-ticket`,
+        bookingData
+      );
+      if (res && res.status == 200) {
+        Swal.fire({
+          title: "Successfully Booked Seats",
+          text: "Please check your Email",
+          icon: "success",
+          confirmButtonText: "Ok",
+        }).then(() => {
+          localStorage.removeItem("selectedSeats");
+          setFullName(null)
+          setEmail(null)
+          setDate(null)
+        });
+      }
+    }
+    
   };
 
   return (
@@ -96,7 +126,7 @@ function BusDeatailScreen() {
                 <div className="p-2">
                   <div className="row">
                     <div className="col-md-6">
-                      <p>Full Name</p>
+                      <p style={{ color: "#111" }}>Full Name</p>
                       <input
                         type="text"
                         className="form-control"
@@ -106,16 +136,17 @@ function BusDeatailScreen() {
                       />
                     </div>
                     <div className="col-md-6">
-                      <p>Mobile Number / Email</p>
+                      <p style={{ color: "#111" }}>Mobile Number / Email</p>
                       <input
                         type="text"
                         className="form-control"
                         onChange={(e) => setEmail(e.target.value)}
                         required={true}
+                        placeholder="Enter your email"
                       />
                     </div>
                     <div className="col-md-6">
-                      <p>Starting Point</p>
+                      <p style={{ color: "#111" }}>Starting Point</p>
                       <select
                         className="form-control"
                         onChange={(e) => setStartingPoint(e.target.value)}
@@ -130,7 +161,7 @@ function BusDeatailScreen() {
                       </select>
                     </div>
                     <div className="col-md-6">
-                      <p>Destination Point</p>
+                      <p style={{ color: "#111" }}>Destination Point</p>
                       <select
                         className="form-control"
                         onChange={(e) => setDestinationPoint(e.target.value)}
@@ -145,7 +176,7 @@ function BusDeatailScreen() {
                       </select>
                     </div>
                     <div className="col-md-12">
-                      <p>Travelling Date</p>
+                      <p style={{ color: "#111" }}>Travelling Date</p>
                       <input
                         type="date"
                         className="form-control"
@@ -155,14 +186,14 @@ function BusDeatailScreen() {
                     </div>
                   </div>
                 </div>
-                <SeatLayout />
+                <SeatLayout booked={bus.bookedSeats} />
                 <div className="mt-3">
-                  <input type="checkbox" /> Continue with payment (Once you
-                  clicked this, you can't change the option)
+                  <input type="checkbox" required={true} /> Continue with
+                  payment (Once you clicked this, you can't change the option)
                 </div>
                 <div>{/* <StripeCheckoutButton price={232} /> */}</div>
                 {/* <InvoiceForm /> */}
-                <button className="btn btn-success" type="submit">
+                <button className="submitBtn mt-4" type="submit">
                   Book Now
                 </button>
               </>

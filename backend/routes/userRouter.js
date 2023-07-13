@@ -172,14 +172,23 @@ userRouter.get("/get-my-bus/:companyId", async (req, res) => {
 
 userRouter.post("/book-ticket", async (req, res) => {
   const data = req.body;
-
   const pdfDoc = generatePDF(data);
   const buffers = [];
   pdfDoc.on("data", (buffer) => buffers.push(buffer));
   pdfDoc.on("end", () => {
     const pdfBuffer = Buffer.concat(buffers);
     sendEmailWithPDF(pdfBuffer, data.email)
-      .then(() => res.send("PDF sent via email successfully"))
+      .then(async() => {
+        const seatsArray = data.selectedSeats.split(",").map(Number);
+        await Bus.updateOne({ _id: data["busId"] },{ $push: { bookedSeats: { $each: seatsArray } } }).then((err,result)=>{
+          if (err) {
+            console.log('Error in inserting seats',err)
+          } else {
+            console.log('Seat inserted successfully')
+          }
+        })
+        res.send("PDF sent via email successfully");
+      })
       .catch((error) =>
         res.status(500).send(`Failed to send PDF via email: ${error}`)
       );
