@@ -48,6 +48,24 @@ function BusDeatailScreen() {
     fetchData();
   }, []);
 
+  const bookSeat = async (e) => {
+    e.preventDefault();
+    let selected_seats = localStorage.getItem("selectedSeats");
+    let bookingData = {
+      fullName,
+      email,
+      startingPoint,
+      destinationPoint,
+      amount: 100,
+      date,
+      selectedSeats: selected_seats,
+    };
+    let res = await axios.post(
+      `${BACKEND_URL}/api/v1/user/book-ticket`,
+      bookingData
+    );
+  };
+
   return (
     <div className="container">
       {loading ? (
@@ -73,72 +91,82 @@ function BusDeatailScreen() {
             </div>
           </div>
           <div className="col-md-6 bg-light">
-            <div className="p-2">
-              <div className="row">
-                <div className="col-md-6">
-                  <p>Full Name</p>
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Full name"
-                    onChange={(e) => setFullName(e.target.value)}
-                  />
+            <form onSubmit={bookSeat}>
+              <>
+                <div className="p-2">
+                  <div className="row">
+                    <div className="col-md-6">
+                      <p>Full Name</p>
+                      <input
+                        type="text"
+                        className="form-control"
+                        placeholder="Full name"
+                        onChange={(e) => setFullName(e.target.value)}
+                        required={true}
+                      />
+                    </div>
+                    <div className="col-md-6">
+                      <p>Mobile Number / Email</p>
+                      <input
+                        type="text"
+                        className="form-control"
+                        onChange={(e) => setEmail(e.target.value)}
+                        required={true}
+                      />
+                    </div>
+                    <div className="col-md-6">
+                      <p>Starting Point</p>
+                      <select
+                        className="form-control"
+                        onChange={(e) => setStartingPoint(e.target.value)}
+                      >
+                        {bus && bus.routes && bus.routes.length > 0 ? (
+                          bus.routes.map((route) => (
+                            <option value={route}>{route}</option>
+                          ))
+                        ) : (
+                          <h1>No starting point found</h1>
+                        )}
+                      </select>
+                    </div>
+                    <div className="col-md-6">
+                      <p>Destination Point</p>
+                      <select
+                        className="form-control"
+                        onChange={(e) => setDestinationPoint(e.target.value)}
+                      >
+                        {bus && bus.routes && bus.routes.length > 0 ? (
+                          bus.routes.map((route) => (
+                            <option value={route}>{route}</option>
+                          ))
+                        ) : (
+                          <h1>No Destination point found</h1>
+                        )}
+                      </select>
+                    </div>
+                    <div className="col-md-12">
+                      <p>Travelling Date</p>
+                      <input
+                        type="date"
+                        className="form-control"
+                        onChange={(e) => setDate(e.target.value)}
+                        required={true}
+                      />
+                    </div>
+                  </div>
                 </div>
-                <div className="col-md-6">
-                  <p>Mobile Number / Email</p>
-                  <input
-                    type="text"
-                    className="form-control"
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
+                <SeatLayout />
+                <div className="mt-3">
+                  <input type="checkbox" /> Continue with payment (Once you
+                  clicked this, you can't change the option)
                 </div>
-                <div className="col-md-6">
-                  <p>Starting Point</p>
-                  <select
-                    className="form-control"
-                    onChange={(e) => setStartingPoint(e.target.value)}
-                  >
-                    {bus && bus.routes && bus.routes.length > 0 ? (
-                      bus.routes.map((route) => (
-                        <option value={route}>{route}</option>
-                      ))
-                    ) : (
-                      <h1>No starting point found</h1>
-                    )}
-                  </select>
-                </div>
-                <div className="col-md-6">
-                  <p>Destination Point</p>
-                  <select
-                    className="form-control"
-                    onChange={(e) => setDestinationPoint(e.target.value)}
-                  >
-                    {bus && bus.routes && bus.routes.length > 0 ? (
-                      bus.routes.map((route) => (
-                        <option value={route}>{route}</option>
-                      ))
-                    ) : (
-                      <h1>No Destination point found</h1>
-                    )}
-                  </select>
-                </div>
-                <div className="col-md-12">
-                  <p>Travelling Date</p>
-                  <input
-                    type="date"
-                    className="form-control"
-                    onChange={(e) => setDate(e.target.value)}
-                  />
-                </div>
-              </div>
-            </div>
-            <SeatLayout />
-            <div className="mt-3">
-              <input type="checkbox" /> Continue with payment (Once you clicked
-              this, you can't change the option)
-            </div>
-            <div>{/* <StripeCheckoutButton price={232} /> */}</div>
-            <InvoiceForm />
+                <div>{/* <StripeCheckoutButton price={232} /> */}</div>
+                {/* <InvoiceForm /> */}
+                <button className="btn btn-success" type="submit">
+                  Book Now
+                </button>
+              </>
+            </form>
           </div>
         </div>
       )}

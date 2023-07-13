@@ -16,51 +16,52 @@ const pdfkit = require("pdfkit");
 const fs = require("fs");
 const path = require("path");
 
+const PDFDocument = require("pdfkit");
+
+
 const userRouter = express.Router();
 
-function generateInvoice() {
-  const pdfContent = `
-    <html>
-      <head>
-        <style>
-          /* Add your invoice styling here */
-        </style>
-      </head>
-      <body>
-        <h1>Invoice</h1>
-        <p>Invoice content goes here</p>
-      </body>
-    </html>
-  `;
-  const dummyPdf = Buffer.from(pdfContent);
-
-  return dummyPdf;
-}
-
-function generateInvoice() {
-  const PDFDocument = require("pdfkit");
-  const fs = require("fs");
-
-  const invoiceNumber = "INV-001";
-  const invoiceDate = new Date().toLocaleDateString();
-  const customerName = "John Doe";
-  const totalAmount = 100.0;
-
+function generatePDF(data) {
   const doc = new PDFDocument();
 
-  doc.text("Invoice", { align: "center" });
-  doc.moveDown();
-  doc.text("Item 1: $10");
-  doc.text("Item 2: $20");
-  doc.text("Total: $30");
-  doc.end();
+  doc.fontSize(20).text("Ticket Details", { align: "center" });
+  doc.fontSize(14).text(`Full Name: ${data.fullName}`);
+  doc.fontSize(14).text(`Email: ${data.email}`);
+  doc.fontSize(14).text(`Starting Point: ${data.startingPoint}`);
+  doc.fontSize(14).text(`Destination Point: ${data.destinationPoint}`);
+  doc.fontSize(14).text(`Amount: ${data.amount}`);
+  doc.fontSize(14).text(`Date: ${data.date}`);
+  doc.fontSize(14).text(`Selected Seats: ${data.selectedSeats}`);
 
-  const invoice = fs.readFileSync("invoice.pdf");
-
-  fs.unlinkSync("invoice.pdf");
-
-  return invoice;
+  return doc;
 }
+
+async function sendEmailWithPDF(pdfBuffer, email) {
+  const transporter = nodemailer.createTransport({
+    service: "Gmail",
+    auth: {
+      user: process.env.EMAIL,
+      pass: process.env.PASSWORD,
+    },
+  });
+
+  const mailOptions = {
+    from: process.env.EMAIL,
+    to: email,
+    subject: "Ticket Details",
+    text: "Attached is your ticket details PDF.",
+    attachments: [
+      {
+        filename: "ticket_details.pdf",
+        content: pdfBuffer,
+        contentType: "application/pdf",
+      },
+    ],
+  };
+
+  await transporter.sendMail(mailOptions);
+}
+
 
 userRouter.get("/", (req, res) => {
   res.send("user router api callled");
@@ -101,14 +102,13 @@ userRouter.post("/add-bus-details", async (req, res) => {
 
 userRouter.post("/sendmail", async (req, res) => {
   const transporter = nodemailer.createTransport({
-    service: "Gmail", // e.g., 'Gmail' or 'Outlook'
+    service: "Gmail",
     auth: {
       user: "aswin1542000@gmail.com",
       pass: process.env.PASSWORD,
     },
   });
 
-  // Setup email data
   const mailOptions = {
     from: "aswinst154@gmail.com",
     to: "aswin1542000@gmail.com",
@@ -116,7 +116,6 @@ userRouter.post("/sendmail", async (req, res) => {
     text: "Hello, this is a test email sent using Nodemailer!",
   };
 
-  // Send email
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
       console.log("Error occurred:", error.message);
@@ -172,11 +171,21 @@ userRouter.get("/get-my-bus/:companyId", async (req, res) => {
 });
 
 userRouter.post("/book-ticket", async (req, res) => {
-  let bookingData = req.body;
-  console.log(
-    "BOOKING DATA==============",
-    bookingData ? bookingData : "NO BOOKING DATA"
-  );
+  const data = req.body;
+
+  const pdfDoc = generatePDF(data);
+  const buffers = [];
+  pdfDoc.on("data", (buffer) => buffers.push(buffer));
+  pdfDoc.on("end", () => {
+    const pdfBuffer = Buffer.concat(buffers);
+    sendEmailWithPDF(pdfBuffer, data.email)
+      .then(() => res.send("PDF sent via email successfully"))
+      .catch((error) =>
+        res.status(500).send(`Failed to send PDF via email: ${error}`)
+      );
+  });
+
+  pdfDoc.end();
 });
 
 module.exports = userRouter;

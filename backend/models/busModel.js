@@ -15,6 +15,7 @@ const busSchema = new mongoose.Schema(
     rate: { type: Number, required: true },
     routes: [],
     company_id: { type: String, required: true },
+    bookedSeats:[]
   },
   {
     timestamps: true,
