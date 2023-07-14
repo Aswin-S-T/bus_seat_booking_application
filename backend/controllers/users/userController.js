@@ -25,9 +25,9 @@ module.exports = {
   register: (userData) => {
     return new Promise(async (resolve, reject) => {
       let { username, email } = userData;
-      username = await User.findOne({ username });
-      email = await User.findOne({ email });
-      if (username || email) {
+     
+      let user = await User.findOne({ email });
+      if (user) {
         errorResponse.message =
           "User already exists with this usename or email";
         resolve(errorResponse);

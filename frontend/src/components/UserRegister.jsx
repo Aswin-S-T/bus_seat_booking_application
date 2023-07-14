@@ -136,7 +136,7 @@ const UserRegister = () => {
     try {
       const response = await axios.post(
         `${BACKEND_URL}/api/v1/user/register`,
-        JSON.stringify({
+        {
           firstname: firstname,
           lastname: lastname,
           email: email,
@@ -146,10 +146,6 @@ const UserRegister = () => {
           city: city,
           zip: zip,
           role: role
-        }),
-        {
-          headers: { "Content-Type": "appliation/json" },
-          withCredentials: true,
         }
       );
       console.log(response.data);
@@ -170,265 +166,284 @@ const UserRegister = () => {
 
   return (
     <>
-    <div>
-       <div className="image_displaying">
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-md-3"></div>
+          <div className="col-md-6">
+            <div>
+              <div className="image_displaying"></div>
+              {success ? (
+                <section>
+                  <h1>Success!</h1>
+                  <p>
+                    <a href="/login">Sign In</a>
+                  </p>
+                </section>
+              ) : (
+                <section>
+                  <p
+                    ref={errRef}
+                    className={errMsg ? "errmsg" : "offscreen"}
+                    aria-live="assertive"
+                  >
+                    {errMsg}
+                  </p>
+                  <h3 className="text-center">Register</h3>
+                  <form onSubmit={handleSubmit}>
+                    <label htmlFor="username">Firstname:</label>
+                    <input
+                      type="text"
+                      id="username"
+                      ref={userRef}
+                      autoComplete="off"
+                      onChange={(e) => setFirstname(e.target.value)}
+                      required
+                      aria-invalid={validName ? "false" : "true"}
+                      aria-describedby="uidnote"
+                      onFocus={() => setUserFocus(true)}
+                      onBlur={() => setUserFocus(false)}
+                    />
+                    <p
+                      id="uidnote"
+                      className={
+                        userFocus && firstname && !validName
+                          ? "instructions"
+                          : "offscreen"
+                      }
+                    >
+                      <FontAwesomeIcon icon={faInfoCircle} />
+                      3 to 24 characters.
+                      <br />
+                      Only alphabets are allowed.
+                    </p>
 
-       </div>
-      {success ? (
-        <section>
-          <h1>Success!</h1>
-          <p>
-            <a href="#">Sign In</a>
-          </p>
-        </section>
-      ) : (
-        <section>
-          <p
-            ref={errRef}
-            className={errMsg ? "errmsg" : "offscreen"}
-            aria-live="assertive"
-          >
-            {errMsg}
-          </p>
-          <h1>Register</h1>
-          <form onSubmit={handleSubmit}>
-            <label htmlFor="username">Firstname:</label>
-            <input
-              type="text"
-              id="username"
-              ref={userRef}
-              autoComplete="off"
-              onChange={(e) => setFirstname(e.target.value)}
-              required
-              aria-invalid={validName ? "false" : "true"}
-              aria-describedby="uidnote"
-              onFocus={() => setUserFocus(true)}
-              onBlur={() => setUserFocus(false)}
-            />
-            <p
-              id="uidnote"
-              className={
-                userFocus && firstname && !validName
-                  ? "instructions"
-                  : "offscreen"
-              }
-            >
-              <FontAwesomeIcon icon={faInfoCircle} />
-              3 to 24 characters.
-              <br />
-              Only alphabets are allowed.
-            </p>
+                    <label htmlFor="lastname">Lastname:</label>
+                    <input
+                      type="text"
+                      id="lastname"
+                      ref={userRef}
+                      autoComplete="off"
+                      onChange={(e) => setLastname(e.target.value)}
+                      required
+                      aria-invalid={validName ? "false" : "true"}
+                      aria-describedby="lidnote"
+                      onFocus={() => setUserFocus(true)}
+                      onBlur={() => setUserFocus(false)}
+                    />
+                    <p
+                      id="lidnote"
+                      className={
+                        userFocus && lastname && !validName
+                          ? "instructions"
+                          : "offscreen"
+                      }
+                    >
+                      <FontAwesomeIcon icon={faInfoCircle} />
+                      3 to 24 characters.
+                      <br />
+                      Only alphabets are allowed.
+                    </p>
 
-            <label htmlFor="lastname">Lastname:</label>
-            <input
-              type="text"
-              id="lastname"
-              ref={userRef}
-              autoComplete="off"
-              onChange={(e) => setLastname(e.target.value)}
-              required
-              aria-invalid={validName ? "false" : "true"}
-              aria-describedby="lidnote"
-              onFocus={() => setUserFocus(true)}
-              onBlur={() => setUserFocus(false)}
-            />
-            <p
-              id="lidnote"
-              className={
-                userFocus && lastname && !validName
-                  ? "instructions"
-                  : "offscreen"
-              }
-            >
-              <FontAwesomeIcon icon={faInfoCircle} />
-              3 to 24 characters.
-              <br />
-              Only alphabets are allowed.
-            </p>
+                    {/* Email Input Feild Code */}
+                    <label htmlFor="email">Email:</label>
+                    <input
+                      type="email"
+                      id="email"
+                      ref={userRef}
+                      autoComplete="off"
+                      onChange={(e) => setEmail(e.target.value)}
+                      required
+                      aria-invalid={validEmail ? "false" : "true"}
+                      aria-describedby="eidnote"
+                      onFocus={() => setEmailFocus(true)}
+                      onBlur={() => setEmailFocus(false)}
+                    />
+                    <p
+                      id="eidnote"
+                      className={
+                        emailFocus && email && !validEmail
+                          ? "instructions"
+                          : "offscreen"
+                      }
+                    >
+                      <FontAwesomeIcon icon={faInfoCircle} />
+                      Please enter a valid email
+                    </p>
 
-            {/* Email Input Feild Code */}
-            <label htmlFor="email">Email:</label>
-            <input
-              type="email"
-              id="email"
-              ref={userRef}
-              autoComplete="off"
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              aria-invalid={validEmail ? "false" : "true"}
-              aria-describedby="eidnote"
-              onFocus={() => setEmailFocus(true)}
-              onBlur={() => setEmailFocus(false)}
-            />
-            <p
-              id="eidnote"
-              className={
-                emailFocus && email && !validEmail
-                  ? "instructions"
-                  : "offscreen"
-              }
-            >
-              <FontAwesomeIcon icon={faInfoCircle} />
-              Please enter a valid email
-            </p>
+                    {/* Phone  Input Feild Code */}
+                    <label htmlFor="phone">Phone:</label>
+                    <input
+                      type="phone"
+                      id="phone"
+                      ref={userRef}
+                      autoComplete="off"
+                      onChange={(e) => setPhone(e.target.value)}
+                      required
+                      aria-invalid={validPhone ? "false" : "true"}
+                      aria-describedby="pidnote"
+                      onFocus={() => setPhoneFocus(true)}
+                      onBlur={() => setPhoneFocus(false)}
+                    />
+                    <p
+                      id="pidnote"
+                      className={
+                        phoneFocus && phone && !validPhone
+                          ? "instructions"
+                          : "offscreen"
+                      }
+                    >
+                      <FontAwesomeIcon icon={faInfoCircle} />
+                      Please enter a 10 digit number
+                    </p>
 
+                    {/* PAssword Input feild code */}
+                    <label htmlFor="password">Password: </label>
+                    <input
+                      type="password"
+                      id="password"
+                      autoComplete="on"
+                      onChange={(e) => setPwd(e.target.value)}
+                      required
+                      aria-invalid={validPwd ? "false" : "true"}
+                      aria-describedby="pwdnote"
+                      onFocus={() => setPwdFocus(true)}
+                      onBlur={() => setPwdFocus(false)}
+                    />
+                    <p
+                      id="pwdnote"
+                      className={
+                        pwdFocus && !validPwd ? "instructions" : "offscreen"
+                      }
+                    >
+                      <FontAwesomeIcon icon={faInfoCircle} />
+                      8 to 24 characters
+                      <br />
+                      Must include uppercase and lowercase letters, a number and
+                      a special character
+                    </p>
 
-           {/* Phone  Input Feild Code */}
-           <label htmlFor="phone">Phone:</label>
-            <input
-              type="phone"
-              id="phone"
-              ref={userRef}
-              autoComplete="off"
-              onChange={(e) => setPhone(e.target.value)}
-              required
-              aria-invalid={validPhone ? "false" : "true"}
-              aria-describedby="pidnote"
-              onFocus={() => setPhoneFocus(true)}
-              onBlur={() => setPhoneFocus(false)}
-            />
-            <p
-              id="pidnote"
-              className={
-                phoneFocus && phone && !validPhone 
-                  ? "instructions"
-                  : "offscreen"
-              }
-            >
-              <FontAwesomeIcon icon={faInfoCircle} />
-              Please enter a 10 digit number
-            </p>
+                    {/* Confirm Password input field */}
+                    <label htmlFor="confirm_pwd">Confirm Password:</label>
+                    <input
+                      type="password"
+                      id="confirm_pwd"
+                      autoComplete="on"
+                      onChange={(e) => setMatchPwd(e.target.value)}
+                      required
+                      aria-invalid={validMatch ? "false" : "true"}
+                      aria-describedby="confirmnote"
+                      onFocus={() => setMatchFocus(true)}
+                      onBlur={() => setMatchFocus(false)}
+                    />
+                    <p
+                      id="confirmnote"
+                      className={
+                        matchFocus && !validMatch ? "instructions" : "offscreen"
+                      }
+                    >
+                      <FontAwesomeIcon icon={faInfoCircle} />
+                      Must match the first password input field.
+                    </p>
 
-            {/* PAssword Input feild code */}
-            <label htmlFor="password">Password: </label>
-            <input
-              type="password"
-              id="password"
-              autoComplete="on"
-              onChange={(e) => setPwd(e.target.value)}
-              required
-              aria-invalid={validPwd ? "false" : "true"}
-              aria-describedby="pwdnote"
-              onFocus={() => setPwdFocus(true)}
-              onBlur={() => setPwdFocus(false)}
-            />
-            <p
-              id="pwdnote"
-              className={pwdFocus && !validPwd ? "instructions" : "offscreen"}
-            >
-              <FontAwesomeIcon icon={faInfoCircle} />
-              8 to 24 characters
-              <br />
-              Must include uppercase and lowercase letters, a number and a
-              special character
-            </p>
+                    {/* State input field code */}
+                    <label htmlFor="state">State:</label>
+                    <input
+                      type="text"
+                      id="state"
+                      autoComplete="off"
+                      onChange={(e) => setState(e.target.value)}
+                      required
+                      // aria-invalid={validName ? "false" : "true"}
+                      // aria-describedby="uidnote"
+                      onFocus={() => setStateFocus(true)}
+                      onBlur={() => setStateFocus(false)}
+                    />
 
-              {/* Confirm Password input field */}
-            <label htmlFor="confirm_pwd">Confirm Password:</label>
-            <input
-              type="password"
-              id="confirm_pwd"
-              autoComplete="on"
-              onChange={(e) => setMatchPwd(e.target.value)}
-              required
-              aria-invalid={validMatch ? "false" : "true"}
-              aria-describedby="confirmnote"
-              onFocus={() => setMatchFocus(true)}
-              onBlur={() => setMatchFocus(false)}
-            />
-            <p
-              id="confirmnote"
-              className={
-                matchFocus && !validMatch ? "instructions" : "offscreen"
-              }
-            >
-              <FontAwesomeIcon icon={faInfoCircle} />
-              Must match the first password input field.
-            </p>
+                    {/* City input feild code */}
+                    <label htmlFor="city">City:</label>
+                    <input
+                      type="text"
+                      id="city"
+                      autoComplete="off"
+                      onChange={(e) => setCity(e.target.value)}
+                      required
+                      // aria-invalid={validName ? "false" : "true"}
+                      // aria-describedby="uidnote"
+                      onFocus={() => setCityFocus(true)}
+                      onBlur={() => setCityFocus(false)}
+                    />
 
-              {/* State input field code */}
-            <label htmlFor="state">State:</label>
-            <input
-              type="text"
-              id="state"
-              autoComplete="off"
-              onChange={(e) => setState(e.target.value)}
-              required
-              // aria-invalid={validName ? "false" : "true"}
-              // aria-describedby="uidnote"
-              onFocus={() => setStateFocus(true)}
-              onBlur={() => setStateFocus(false)}
-            />
+                    {/* Zip input field code */}
+                    <label htmlFor="zip">Zip:</label>
+                    <input
+                      type="text"
+                      id="zip"
+                      autoComplete="off"
+                      onChange={(e) => setZip(e.target.value)}
+                      required
+                      aria-invalid={validZip ? "false" : "true"}
+                      aria-describedby="zidnote"
+                      onFocus={() => setZipFocus(true)}
+                      onBlur={() => setZipFocus(false)}
+                    />
+                    <p
+                      id="zidnote"
+                      className={
+                        zipFocus && zip && !validZip
+                          ? "instructions"
+                          : "offscreen"
+                      }
+                    >
+                      <FontAwesomeIcon icon={faInfoCircle} />
+                      Please enter a 6 digit value code
+                    </p>
 
-              {/* City input feild code */}
-            <label htmlFor="city">City:</label>
-            <input
-              type="text"
-              id="city"
-              autoComplete="off"
-              onChange={(e) => setCity(e.target.value)}
-              required
-              // aria-invalid={validName ? "false" : "true"}
-              // aria-describedby="uidnote"
-              onFocus={() => setCityFocus(true)}
-              onBlur={() => setCityFocus(false)}
-            />
+                    {/* Role Input Field Code */}
+                    <label htmlFor="role">Role:</label>
+                    <input
+                      type="text"
+                      id="role"
+                      autoComplete="off"
+                      onChange={(e) => setRole(e.target.value)}
+                      required
+                      aria-invalid={validRole ? "false" : "true"}
+                      aria-describedby="ridnote"
+                      onFocus={() => setRoleFocus(true)}
+                      onBlur={() => setRoleFocus(false)}
+                    />
+                    <p
+                      id="ridnote"
+                      className={
+                        roleFocus && role && !validRole
+                          ? "instructions"
+                          : "offscreen"
+                      }
+                    >
+                      <FontAwesomeIcon icon={faInfoCircle} />
+                      Please choose a role from User or Company, anyone !!
+                    </p>
 
-              {/* Zip input field code */}
-            <label htmlFor="zip">Zip:</label>
-            <input
-              type="text"
-              id="zip"
-              autoComplete="off"
-              onChange={(e) => setZip(e.target.value)}
-              required
-              aria-invalid={validZip ? "false" : "true"}
-              aria-describedby="zidnote"
-              onFocus={() => setZipFocus(true)}
-              onBlur={() => setZipFocus(false)}
-            />
-            <p
-              id="zidnote"
-              className={
-                zipFocus && zip && !validZip ? "instructions" : "offscreen"
-              }
-            >
-              <FontAwesomeIcon icon={faInfoCircle} />
-              Please enter a 6 digit value code
-            </p>
-
-
-            {/* Role Input Field Code */}
-            <label htmlFor="role">Role:</label>
-            <input
-              type="text"
-              id="role"
-              autoComplete="off"
-              onChange={(e) => setRole(e.target.value)}
-              required
-              aria-invalid={validRole ? "false" : "true"}
-              aria-describedby="ridnote"
-              onFocus={() => setRoleFocus(true)}
-              onBlur={() => setRoleFocus(false)}
-            />
-            <p
-              id="ridnote"
-              className={
-                roleFocus && role && !validRole ? "instructions" : "offscreen"
-              }
-            >
-              <FontAwesomeIcon icon={faInfoCircle} />
-              Please choose a role from User or Company, anyone !!
-            </p>
-
-            <button
-              disabled={!validName || !validPwd || !validMatch  || !validEmail || !validPhone ? true : false}
-            >
-              Register
-            </button>
-          </form>
-        </section>
-      )}
+                    <button
+                    className="submitBtn"
+                      disabled={
+                        !validName ||
+                        !validPwd ||
+                        !validMatch ||
+                        !validEmail ||
+                        !validPhone
+                          ? true
+                          : false
+                      }
+                    >
+                      Register
+                    </button>
+                  </form>
+                </section>
+              )}
+            </div>
+          </div>
+          <div className="col-md-3"></div>
+        </div>
       </div>
     </>
   );
