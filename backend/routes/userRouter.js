@@ -8,6 +8,7 @@ const {
   register,
   login,
   addBusDetails,
+  addFeedback,
 } = require("../controllers/users/userController");
 const Bus = require("../models/busModel");
 const { generateBusDetails } = require("../utils/helper");
@@ -204,6 +205,8 @@ console.log("req",req);
   let payload = {
     comment: req.body.comment,
     rating: req.body.rating,
+    name : req.body.name,
+    bus_ID : req.body.bus_ID,
   }
 
   addFeedback(payload).then((result) => {
