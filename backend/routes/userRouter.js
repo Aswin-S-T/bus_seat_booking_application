@@ -8,6 +8,7 @@ const {
   register,
   login,
   addBusDetails,
+  deleteBus,
 } = require("../controllers/users/userController");
 const Bus = require("../models/busModel");
 const { generateBusDetails } = require("../utils/helper");
@@ -196,5 +197,13 @@ userRouter.post("/book-ticket", async (req, res) => {
 
   pdfDoc.end();
 });
+
+userRouter.post('/delete-bus/:busId',async(req,res)=>{
+  let busId = req.params.busId
+  deleteBus(busId).then((result) => {
+    res.send(result);
+  });
+  
+})
 
 module.exports = userRouter;

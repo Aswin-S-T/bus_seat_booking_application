@@ -82,4 +82,11 @@ module.exports = {
       });
     });
   },
+  deleteBus:(busId)=>{
+    return new Promise((async(resolve,reject)=>{
+      await Bus.deleteOne({_id : busId}).then(()=>{
+        resolve(successResponse)
+      })
+    }))
+  }
 };
