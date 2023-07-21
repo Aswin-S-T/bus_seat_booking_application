@@ -5,6 +5,7 @@ import "react-tabs/style/react-tabs.css";
 import ListBus from "../../components/ListBus";
 import AddBus from "./AddBus";
 import DashboardHome from "./DashboardHome";
+import Header from "../../components/Header";
 
 function Dashboard() {
   const navigate = useNavigate();
@@ -21,11 +22,14 @@ function Dashboard() {
   };
 
   return (
-    <div>
+    <div >
       <Tabs className="vertical-tabs">
-        <TabList className="vertical-tab-list">
-          <Tab className="vertical-tab">
-            <i className="fa fa-qrcode m-2"></i> Dashboard
+        <TabList className="vertical-tab-list" >
+          <div className="tabHeader">
+          <Header />
+          </div>
+          <Tab className="vertical-tab" >
+            <i className="fa fa-qrcode m-2" ></i> Dashboard
           </Tab>
           {/* <Tab className="vertical-tab">
             <i className="fa fa-bus m-2"></i> Add bus
@@ -39,8 +43,17 @@ function Dashboard() {
           <Tab className="vertical-tab">
             <i className="fa fa-comment m-2"></i> Feedbacks
           </Tab>
+          <Tab className="vertical-tab">
+            <i className="fa fa-user m-2"></i> Profile
+          </Tab>
+          <Tab className="vertical-tab">
+            <i className="fa fa-cog m-2"></i> Settings
+          </Tab>
+          <Tab className="vertical-tab">
+            <i className="fa fa-sign-out m-2"></i> LogOut
+          </Tab>
         </TabList>
-        <TabPanel>
+        <TabPanel style={{backgroundColor:"#f0f8ff"}}>
           <DashboardHome />
         </TabPanel>
         {/* <TabPanel>
@@ -51,6 +64,15 @@ function Dashboard() {
         </TabPanel>
         <TabPanel>
           <p>Content for Tab 2</p>
+        </TabPanel>
+        <TabPanel>
+          <p>Content for Tab 3</p>
+        </TabPanel>
+        <TabPanel>
+          <p>Content for Tab 3</p>
+        </TabPanel>
+        <TabPanel>
+          <p>Content for Tab 3</p>
         </TabPanel>
         <TabPanel>
           <p>Content for Tab 3</p>

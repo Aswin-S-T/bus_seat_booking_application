@@ -2,10 +2,12 @@ import React from "react";
 import DatatablePage from "../components/DatatablePage";
 import SearchComponents from "../components/SearchComponents";
 import Table from "../components/Table";
+import Header from "../components/Header";
 
 function HomeScreen() {
   return (
     <div>
+      <Header />
       <div className="container-fluid">
         <div className="row">
           <div className="col-md-6">

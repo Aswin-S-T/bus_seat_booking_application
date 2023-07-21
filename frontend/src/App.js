@@ -13,7 +13,7 @@ function App() {
     <BrowserRouter>
       <div>
         <header>
-          <Header />
+          {/* <Header /> */}
         </header>
         <main>
           <Routes>
@@ -28,9 +28,9 @@ function App() {
           </Routes>
         </main>
 
-        <footer>
+        {/* <footer>
           <p className="text-white">All the rights are reserved @ 2023</p>
-        </footer>
+        </footer> */}
       </div>
     </BrowserRouter>
   );
