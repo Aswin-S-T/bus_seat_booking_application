@@ -9,6 +9,7 @@ const {
   login,
   addBusDetails,
   deleteBus,
+  addFeedback,
 } = require("../controllers/users/userController");
 const Bus = require("../models/busModel");
 const { generateBusDetails } = require("../utils/helper");
@@ -179,11 +180,11 @@ userRouter.post("/book-ticket", async (req, res) => {
   pdfDoc.on("end", () => {
     const pdfBuffer = Buffer.concat(buffers);
     sendEmailWithPDF(pdfBuffer, data.email)
-      .then(async() => {
+      .then(async () => {
         const seatsArray = data.selectedSeats.split(",").map(Number);
-        await Bus.updateOne({ _id: data["busId"] },{ $push: { bookedSeats: { $each: seatsArray } } }).then((err,result)=>{
+        await Bus.updateOne({ _id: data["busId"] }, { $push: { bookedSeats: { $each: seatsArray } } }).then((err, result) => {
           if (err) {
-            console.log('Error in inserting seats',err)
+            console.log('Error in inserting seats', err)
           } else {
             console.log('Seat inserted successfully')
           }
@@ -205,5 +206,20 @@ userRouter.post('/delete-bus/:busId',async(req,res)=>{
   });
   
 })
+
+userRouter.post("/feedback", async (req, res) => {
+console.log("req",req);
+
+  let payload = {
+    comment: req.body.comment,
+    rating: req.body.rating,
+    name : req.body.name,
+    bus_ID : req.body.bus_ID,
+  }
+
+  addFeedback(payload).then((result) => {
+    res.send(result);
+  });
+});
 
 module.exports = userRouter;

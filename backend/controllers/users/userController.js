@@ -4,6 +4,7 @@ let { objectId } = require("mongoose");
 
 const jwt = require("jsonwebtoken");
 const Bus = require("../../models/busModel");
+const Feedback = require("../../models/feedBack");
 
 const JWT_SECRET = process.env.JWT_SECRET || "something secret";
 
@@ -88,5 +89,13 @@ module.exports = {
         resolve(successResponse)
       })
     }))
-  }
+  },
+
+  addFeedback: (payload) => {
+    return new Promise(async (resolve, reject) => {
+      await Feedback.create(payload).then(() => {
+        resolve(successResponse);
+      });
+    });
+  },
 };
