@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
 *{
   margin: 0;
   padding: 0;
@@ -97,20 +98,27 @@ a{
   display: flex;
   flex-direction: column;
   /* border-right: 1px solid #ccc; */
-  width: 20%;
+  width: 17%;
   height: 100%;
   /* background-color: #002244; */
   /* background-color: #142b42; */
   background-color: white;
-  color: rgb(59, 38, 38);
-  font-size: 19px;
+  color: rgb(99, 99, 99);
+  font-size: 17px;
   font-weight: 500;
   font-family: sans-serif;
 }
-
+h6{
+  color: #584949;
+  font-family: sans-serif;
+  font-weight: bold;
+}
 .vertical-tab {
   padding: 10px;
   /* border-bottom: 1px solid #ccc; */
+}
+h4{
+  color: #ff317e;
 }
 
 .vertical-tab:last-child {
@@ -124,8 +132,9 @@ a{
 li.react-tabs__tab--selected{
   /* background-color: #6F00FF; */
   /* background-color: #1c4e6d; */
-  background-color: darkcyan;
-  color: white;
+  background-color: rgb(253, 199, 255);
+  color: #ff317e;
+  border-radius: 40px;
 }
 ul li{
   list-style: none;
@@ -151,6 +160,12 @@ ul li{
   color: white;
   width: 100%;
 }
+.shadow-bx{
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(255, 196, 196, 0.2), 0 6px 20px 0 rgba(199, 199, 199, 0.19);
+  padding: 8px;
+  border-radius: 20px;
+}
 .dashboard{
   background-color: white;
   border-radius: 10px;
@@ -163,7 +178,9 @@ ul li{
   border-radius: 10px;
 }
 .react-tabs__tab-panel{
-  background-color: whitesmoke;
+ 
+      background: #FFF5FF;
+      background: linear-gradient(135deg, #FFF5FF, #F9FEFE);
 }
 .fa-plus{
   font-size: 30px;
@@ -198,4 +215,21 @@ button{
 }
 .selected-seat{
   background-color: blue;
+}
+.dashboard-text{
+  font-family: sans-serif;
+  font-weight: bold;
+  color: #584949;
+}
+.same-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.same-row i{
+  font-size: 25px;
+  color: white;
+  background-color: rgb(253, 199, 255);
+  padding: 10px;
+  border-radius: 10px;
 }

@@ -24,21 +24,35 @@ function Dashboard() {
     <div>
       <Tabs className="vertical-tabs">
         <TabList className="vertical-tab-list">
-          <Tab className="vertical-tab">
-            <i className="fa fa-qrcode m-2"></i> Dashboard
-          </Tab>
-          {/* <Tab className="vertical-tab">
+          <div className="container mt-3">
+            <a
+              href="/"
+              style={{
+                textDecoration: "none",
+                color: "#ff317e",
+                fontWeight: "bold",
+                fontSize: "24px",
+              }}
+            >
+              <i className="fa fa-bus m-2" style={{ color: "#444" }}></i>
+              City Bus
+            </a>
+            <Tab className="vertical-tab">
+              <i className="fa fa-qrcode m-2"></i> Dashboard
+            </Tab>
+            {/* <Tab className="vertical-tab">
             <i className="fa fa-bus m-2"></i> Add bus
           </Tab> */}
-          <Tab className="vertical-tab">
-            <i className="fa fa-bus m-2"></i> Buses
-          </Tab>
-          <Tab className="vertical-tab">
-            <i className="fa fa-bell m-2"></i> Notifications
-          </Tab>
-          <Tab className="vertical-tab">
-            <i className="fa fa-comment m-2"></i> Feedbacks
-          </Tab>
+            <Tab className="vertical-tab">
+              <i className="fa fa-bus m-2"></i> Buses
+            </Tab>
+            <Tab className="vertical-tab">
+              <i className="fa fa-bell m-2"></i> Notifications
+            </Tab>
+            <Tab className="vertical-tab">
+              <i className="fa fa-comment m-2"></i> Feedbacks
+            </Tab>
+          </div>
         </TabList>
         <TabPanel>
           <DashboardHome />
