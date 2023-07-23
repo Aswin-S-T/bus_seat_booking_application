@@ -19,7 +19,7 @@ const fs = require("fs");
 const path = require("path");
 
 const PDFDocument = require("pdfkit");
-
+const { getNotification } = require("../controllers/notificationController");
 
 const userRouter = express.Router();
 
@@ -63,7 +63,6 @@ async function sendEmailWithPDF(pdfBuffer, email) {
 
   await transporter.sendMail(mailOptions);
 }
-
 
 userRouter.get("/", (req, res) => {
   res.send("user router api callled");
@@ -182,13 +181,16 @@ userRouter.post("/book-ticket", async (req, res) => {
     sendEmailWithPDF(pdfBuffer, data.email)
       .then(async () => {
         const seatsArray = data.selectedSeats.split(",").map(Number);
-        await Bus.updateOne({ _id: data["busId"] }, { $push: { bookedSeats: { $each: seatsArray } } }).then((err, result) => {
+        await Bus.updateOne(
+          { _id: data["busId"] },
+          { $push: { bookedSeats: { $each: seatsArray } } }
+        ).then((err, result) => {
           if (err) {
-            console.log('Error in inserting seats', err)
+            console.log("Error in inserting seats", err);
           } else {
-            console.log('Seat inserted successfully')
+            console.log("Seat inserted successfully");
           }
-        })
+        });
         res.send("PDF sent via email successfully");
       })
       .catch((error) =>
@@ -199,27 +201,32 @@ userRouter.post("/book-ticket", async (req, res) => {
   pdfDoc.end();
 });
 
-userRouter.post('/delete-bus/:busId',async(req,res)=>{
-  let busId = req.params.busId
+userRouter.post("/delete-bus/:busId", async (req, res) => {
+  let busId = req.params.busId;
   deleteBus(busId).then((result) => {
     res.send(result);
   });
-  
-})
+});
 
 userRouter.post("/feedback", async (req, res) => {
-console.log("req",req);
+  console.log("req", req);
 
   let payload = {
     comment: req.body.comment,
     rating: req.body.rating,
-    name : req.body.name,
-    bus_ID : req.body.bus_ID,
-  }
+    name: req.body.name,
+    bus_ID: req.body.bus_ID,
+  };
 
   addFeedback(payload).then((result) => {
     res.send(result);
   });
 });
+
+userRouter.get('/get-notification',async(req,res)=>{
+  getNotification().then((result)=>{
+    res.send(result)
+  })
+})
 
 module.exports = userRouter;
