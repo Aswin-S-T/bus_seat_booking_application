@@ -26,7 +26,7 @@ module.exports = {
   register: (userData) => {
     return new Promise(async (resolve, reject) => {
       let { username, email } = userData;
-     
+
       let user = await User.findOne({ email });
       if (user) {
         errorResponse.message =
@@ -76,6 +76,7 @@ module.exports = {
       resolve(errorResponse);
     });
   },
+
   addBusDetails: (busData) => {
     return new Promise(async (resolve, reject) => {
       await Bus.create(busData).then(() => {

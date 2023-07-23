@@ -11,6 +11,8 @@ const {
   addFeedback,
 } = require("../controllers/users/userController");
 const Bus = require("../models/busModel");
+const Feedback = require("../models/feedBack");
+
 const { generateBusDetails } = require("../utils/helper");
 const nodemailer = require("nodemailer");
 const pdfkit = require("pdfkit");
@@ -100,6 +102,59 @@ userRouter.post("/add-bus-details", async (req, res) => {
     res.send(result);
   });
 });
+
+
+userRouter.post("/update-bus-details/:busId", async (req, res) => {
+  const busId = req.params.busId;
+  const updatedData = req.body;
+
+  try {
+    const bus = await Bus.findById(busId);
+
+    if (!bus) {
+      return res.status(404).json({ message: "Bus not found" });
+    }
+
+    bus.bus_name = updatedData.bus_name || bus.bus_name;
+    bus.bus_no = updatedData.bus_no || bus.bus_no;
+    bus.bus_type = updatedData.bus_type || bus.bus_type;
+    bus.time = updatedData.time || bus.time;
+    bus.start_time = updatedData.start_time || bus.start_time;
+    bus.end_time = updatedData.end_time || bus.end_time;
+    bus.from = updatedData.from || bus.from;
+    bus.to = updatedData.to || bus.to;
+    bus.imageUrl = updatedData.imageUrl || bus.imageUrl;
+    bus.available_seats = updatedData.available_seats || bus.available_seats;
+    bus.rate = updatedData.rate || bus.rate;
+    bus.routes = updatedData.routes || bus.routes;
+    bus.company_id = updatedData.company_id || bus.company_id;
+    bus.bookedSeats = updatedData.bookedSeats || bus.bookedSeats;
+
+    const updatedBus = await bus.save().then((result) => {
+      res.send(result);
+    });
+    res.json(updatedBus);
+  } catch (error) {
+    res.status(500).json({ message: "Error updating bus details" });
+  }
+});
+
+
+userRouter.delete("/delete-bus/:busId", async (req, res) => {
+  const busId = req.params.busId;
+
+  try {
+    const bus = await Bus.findById(busId);
+    if (!bus) {
+      return res.status(404).json({ message: "Bus not found" });
+    }
+    await bus.remove();
+    res.json({ message: "Bus deleted successfully" });
+  } catch (error) {
+    res.status(500).json({ message: "Error deleting bus" });
+  }
+});
+
 
 userRouter.post("/sendmail", async (req, res) => {
   const transporter = nodemailer.createTransport({
@@ -200,18 +255,28 @@ userRouter.post("/book-ticket", async (req, res) => {
 
 
 userRouter.post("/feedback", async (req, res) => {
-console.log("req",req);
+  console.log("req", req);
 
   let payload = {
     comment: req.body.comment,
     rating: req.body.rating,
-    name : req.body.name,
-    bus_ID : req.body.bus_ID,
+    name: req.body.name,
+    bus_ID: req.body.bus_ID,
   }
 
   addFeedback(payload).then((result) => {
     res.send(result);
   });
+});
+
+userRouter.get("/feedback", async (req, res) => {
+  try {
+    const allFeedback = await Feedback.find({})
+    res.status(200).json(allFeedback);
+  } catch (error) {
+    console.log("error", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
 });
 
 module.exports = userRouter;
