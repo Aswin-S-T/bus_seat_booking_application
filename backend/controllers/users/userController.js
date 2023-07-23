@@ -5,6 +5,7 @@ let { objectId } = require("mongoose");
 const jwt = require("jsonwebtoken");
 const Bus = require("../../models/busModel");
 const Feedback = require("../../models/feedBack");
+const { cloudinary } = require("../../utils/cloudinary.js");
 
 const JWT_SECRET = process.env.JWT_SECRET || "something secret";
 
@@ -26,7 +27,7 @@ module.exports = {
   register: (userData) => {
     return new Promise(async (resolve, reject) => {
       let { username, email } = userData;
-     
+
       let user = await User.findOne({ email });
       if (user) {
         errorResponse.message =
@@ -78,17 +79,31 @@ module.exports = {
   },
   addBusDetails: (busData) => {
     return new Promise(async (resolve, reject) => {
-      await Bus.create(busData).then(() => {
+      const fileStr = busData.imageUrl ? busData.imageUrl : "";
+      const uploadResponse = await cloudinary.uploader
+        .upload(fileStr, {
+          upload_preset: "cloudinary_react",
+          public_id: Date.now(),
+        })
+        .then(async (response) => {
+          delete busData.imageUrl;
+          let busDetails = {
+            ...busData,
+            imageUrl: response.url,
+          };
+
+          await Bus.create(busDetails).then(() => {
+            resolve(successResponse);
+          });
+        });
+    });
+  },
+  deleteBus: (busId) => {
+    return new Promise(async (resolve, reject) => {
+      await Bus.deleteOne({ _id: busId }).then(() => {
         resolve(successResponse);
       });
     });
-  },
-  deleteBus:(busId)=>{
-    return new Promise((async(resolve,reject)=>{
-      await Bus.deleteOne({_id : busId}).then(()=>{
-        resolve(successResponse)
-      })
-    }))
   },
 
   addFeedback: (payload) => {
