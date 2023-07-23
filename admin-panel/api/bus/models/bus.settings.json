@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "buses",
+  "info": {
+    "name": "bus",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "image": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "number": {
+      "type": "string"
+    },
+    "total_seats": {
+      "type": "integer"
+    },
+    "rate_per_km": {
+      "type": "decimal"
+    },
+    "routes": {
+      "type": "enumeration",
+      "enum": [
+        "Trivandrum"
+      ]
+    },
+    "places": {
+      "type": "json"
+    }
+  }
+}
