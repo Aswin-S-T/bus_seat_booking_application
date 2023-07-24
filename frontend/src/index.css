@@ -391,3 +391,73 @@ box-shadow: -10px -10px 20px 0px #FFF, 10px 10px 20px 0px rgba(170, 170, 204, 0.
   margin-top: 20px;
 
 }
+
+/*Notification screen*/
+.notificationCard{
+  background-color: white;
+  box-shadow: -10px -10px 20px 0px #FFF, 10px 10px 20px 0px rgba(247, 247, 255, 0.5), 5px 5px 10px 0px rgba(170, 170, 204, 0.25), -5px -5px 10px 0px rgba(255, 255, 255, 0.50);
+  border-radius: 10px;
+}
+.notificationHeader{
+  display: flex;
+  justify-content: space-between;
+}
+.avatar-img{
+  height: 80px;
+  width: 80px;
+}
+.time{
+  color: #1D1D1D;
+    text-align: right;
+    font-family: Helvetica;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.imageHeader{
+  display: flex;
+}
+.name{
+  color: #1D1D1D;
+    font-family: Helvetica;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+}
+.notificationContent{
+
+}
+.notificationContent h5{
+  color: #1D1D1D;
+  font-family: Helvetica;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.notificationContent p{
+  color: #1D1D1D;
+    font-family: Helvetica;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.notificationContent a{
+  color: blue;
+}
+.notificationScreen{
+  overflow-y: scroll;
+  width: 100%;
+}
+.notificationScreen::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+.notificationScreen::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+/*ENd notification screen*/
