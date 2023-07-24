@@ -43,6 +43,9 @@ function Dashboard() {
           <Tab className="vertical-tab">
             <i className="fa fa-comment m-2"></i> Feedbacks
           </Tab>
+          
+          <div className="dashboardLine"></div>
+
           <Tab className="vertical-tab">
             <i className="fa fa-user m-2"></i> Profile
           </Tab>
@@ -59,7 +62,7 @@ function Dashboard() {
         {/* <TabPanel>
           <AddBus />
         </TabPanel> */}
-        <TabPanel>
+        <TabPanel style={{backgroundColor:"#f0f8ff"}}>
           <ListBus />
         </TabPanel>
         <TabPanel>
