@@ -33,15 +33,23 @@ function ListBus() {
   }, []);
 
   return (
-    <div className="mt-5">
-      <h4>Your Buses</h4>
+    <div className="busList  ml-4 mr-2">
       <div className="modal-div">
-        <i
+        <div className="busListHead">
+          <p className="DashboardHeading">Your Buses</p>
+          {/* <i
           class="fa fa-plus"
           data-toggle="modal"
           data-target="#staticBackdrop"
-        ></i>
-
+        ></i> */}
+          <div className="busListButton mt-3">
+            <button
+            className="addBusButton"
+              data-toggle="modal"
+              data-target="#staticBackdrop"
+            >Add Bus</button>
+          </div>
+        </div>
         <div
           class="modal fade"
           id="staticBackdrop"
@@ -77,7 +85,7 @@ function ListBus() {
         <LoadingBox />
       ) : (
         <>
-          <div className="card mt-5">
+          <div className="card mt-3">
             {/* <DatatablePage /> */}
             <table class="table">
               <thead>

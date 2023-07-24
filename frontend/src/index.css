@@ -212,9 +212,21 @@ ul li {
 .card {
   display: flex;
   flex-direction: row;
-  width: 300%;
-  height: 100%;
+  /* width: 300%;
+  height: 100%; */
   padding: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
+  margin-top: 50px;
+}
+
+.DashboardCard {
+  display: flex;
+  flex-direction: row;
+  width: 230%;
+  height: 80%;
+  padding: 10px;
+  background-color: #ffffff;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 10px;
   margin-top: 50px;
@@ -298,9 +310,12 @@ button {
   border-radius: 11.262px;
   opacity: 0.6499999761581421;
   background: #FFF2E9;
-  width: 44.344px;
-  height: 44.344px;
+  width: 64.344px;
+  height: 64.344px;
   flex-shrink: 0;
+  margin-left: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .dashboardBoxTittle {
@@ -322,8 +337,57 @@ button {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  margin-top: -10px;
 }
 
 .dashboardBoxDesign {
   display: flex;
+}
+
+.dashboardLine {
+  width: 139.368px;
+  height: 0.704px;
+  background: #ECECEE;
+  margin-left: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.busList {
+  background-color: aliceblue;
+}
+
+.busListHead {
+  display: flex;
+  justify-content: space-between;
+}
+
+.addBusButton{
+  display: flex;
+width: 206px;
+height: 44px;
+padding: 12px 32px;
+justify-content: center;
+align-items: center;
+flex-shrink: 0;
+border-radius: 32px;
+background: #F5F5FA;
+
+/* Shadow 3 */
+box-shadow: -10px -10px 20px 0px #FFF, 10px 10px 20px 0px rgba(170, 170, 204, 0.50), 5px 5px 10px 0px rgba(170, 170, 204, 0.25), -5px -5px 10px 0px rgba(255, 255, 255, 0.50);
+}
+
+.TittleNumberBox{
+  margin-left: 20px;
+  margin-top: 25px;
+}
+
+.verticalLine{
+  width: 0.704px;
+  height: 57.718px;
+  background: #9b9b9e;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-top: 20px;
+
 }

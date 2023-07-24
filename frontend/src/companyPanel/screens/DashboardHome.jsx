@@ -1,4 +1,6 @@
 import React from "react";
+import Graph from "../components/graph.component";
+import GraphComponent from "../components/graph.component";
 
 function DashboardHome() {
   return (
@@ -9,25 +11,38 @@ function DashboardHome() {
       </div>
       <div className="row">
         <div className="col-md-4">
-          <div className="card p-2">
+          <div className="DashboardCard p-2">
             <div className="dashboardBoxDesign">
-            <div className="dashboardBox">
-            <i className="fa fa-comment m-2"></i> 
+              <div className="dashboardBox">
+                {/* <i className="fa fa-comment m-2 ml-50"></i> */}
+              </div>
+              <div className="TittleNumberBox">
+                <h5 className="dashboardBoxTittle">Total Earnings</h5>
+                <p className="dashboardBoxNumber">5</p>
+              </div>
             </div>
-            <div>
-            <h5 className="dashboardBoxTittle">Total Earnings</h5>
-            <p className="dashboardBoxNumber">5</p>
+            <div className="verticalLine"></div>
+            <div className="dashboardBoxDesign">
+              <div className="dashboardBox">
+                {/* <i className="fa fa-comment m-2 ml-50"></i> */}
+              </div>
+              <div className="TittleNumberBox">
+                <h5 className="dashboardBoxTittle">Projects</h5>
+                <p className="dashboardBoxNumber">5</p>
+              </div>
             </div>
-            </div>
-            <div>
-              {/* <h5>Total Earnings</h5>
-              <h1 className="text-center">1000</h1> */}
-            </div>
-            <div>
-              {/* <h5>Total Earnings</h5>
-              <h1 className="text-center">1000</h1> */}
+            <div className="verticalLine"></div>
+            <div className="dashboardBoxDesign">
+              <div className="dashboardBox">
+                {/* <i className="fa fa-comment m-2 ml-50"></i> */}
+              </div>
+              <div className="TittleNumberBox">
+                <h5 className="dashboardBoxTittle">Total Buses</h5>
+                <p className="dashboardBoxNumber">5</p>
+              </div>
             </div>
           </div>
+          {/* <Graph></Graph> */}
         </div>
       </div>
     </div>
