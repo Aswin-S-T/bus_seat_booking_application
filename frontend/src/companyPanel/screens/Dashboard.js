@@ -66,8 +66,8 @@ function Dashboard() {
         <TabPanel style={{ backgroundColor: "#f0f8ff" }}>
           <ListBus />
         </TabPanel>
-        <TabPanel className="notificationScreen">
-          <NotificationScreen />
+        <TabPanel>
+          <NotificationScreen  />
         </TabPanel>
         <TabPanel>
           <p>Content for Tab 3</p>

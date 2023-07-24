@@ -451,7 +451,7 @@ box-shadow: -10px -10px 20px 0px #FFF, 10px 10px 20px 0px rgba(170, 170, 204, 0.
 }
 .notificationScreen{
   overflow-y: scroll;
-  width: 100%;
+  /* width: 100%; */
 }
 .notificationScreen::-webkit-scrollbar {
   width: 0.5em;
