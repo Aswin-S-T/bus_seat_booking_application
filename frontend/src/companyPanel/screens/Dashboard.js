@@ -6,6 +6,7 @@ import ListBus from "../../components/ListBus";
 import AddBus from "./AddBus";
 import DashboardHome from "./DashboardHome";
 import Header from "../../components/Header";
+import NotificationScreen from "./NotificationScreen";
 
 function Dashboard() {
   const navigate = useNavigate();
@@ -22,14 +23,14 @@ function Dashboard() {
   };
 
   return (
-    <div >
+    <div>
       <Tabs className="vertical-tabs">
-        <TabList className="vertical-tab-list" >
+        <TabList className="vertical-tab-list">
           <div className="tabHeader">
-          <Header />
+            <Header />
           </div>
-          <Tab className="vertical-tab" >
-            <i className="fa fa-qrcode m-2" ></i> Dashboard
+          <Tab className="vertical-tab">
+            <i className="fa fa-qrcode m-2"></i> Dashboard
           </Tab>
           {/* <Tab className="vertical-tab">
             <i className="fa fa-bus m-2"></i> Add bus
@@ -43,7 +44,7 @@ function Dashboard() {
           <Tab className="vertical-tab">
             <i className="fa fa-comment m-2"></i> Feedbacks
           </Tab>
-          
+
           <div className="dashboardLine"></div>
 
           <Tab className="vertical-tab">
@@ -56,17 +57,17 @@ function Dashboard() {
             <i className="fa fa-sign-out m-2"></i> LogOut
           </Tab>
         </TabList>
-        <TabPanel style={{backgroundColor:"#f0f8ff"}}>
+        <TabPanel style={{ backgroundColor: "#f0f8ff" }}>
           <DashboardHome />
         </TabPanel>
         {/* <TabPanel>
           <AddBus />
         </TabPanel> */}
-        <TabPanel style={{backgroundColor:"#f0f8ff"}}>
+        <TabPanel style={{ backgroundColor: "#f0f8ff" }}>
           <ListBus />
         </TabPanel>
         <TabPanel>
-          <p>Content for Tab 2</p>
+          <NotificationScreen  />
         </TabPanel>
         <TabPanel>
           <p>Content for Tab 3</p>
