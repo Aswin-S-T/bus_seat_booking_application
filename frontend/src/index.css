@@ -224,13 +224,38 @@ ul li {
 .DashboardCard {
   display: flex;
   flex-direction: row;
-  width: 230%;
-  height: 80%;
+  width: 330%;
+  height: 50%;
   padding: 10px;
   background-color: #ffffff;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 10px;
   margin-top: 50px;
+}
+
+.DashboardCardGraph {
+  width: 330%;
+  height: 180%;
+  padding: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
+  margin-top: 50px;
+}
+
+.DashboardCardGraphComment2 {
+  width: 50%;
+  height: 180%;
+  padding: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
+  margin-top: 50px;
+  margin-left: 20%;
+}
+
+.commentGraphProject {
+  display: flex;
 }
 
 .react-tabs__tab-panel {
@@ -319,6 +344,30 @@ button {
   margin-bottom: 20px;
 }
 
+.dashboardBox1 {
+  border-radius: 11.262px;
+  opacity: 0.6499999761581421;
+  background: #EDE8FF;
+  width: 64.344px;
+  height: 64.344px;
+  flex-shrink: 0;
+  margin-left: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.dashboardBox2 {
+  border-radius: 11.262px;
+  opacity: 0.6499999761581421;
+  background: #EAF9FF;
+  width: 64.344px;
+  height: 64.344px;
+  flex-shrink: 0;
+  margin-left: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .dashboardBoxTittle {
   color: #616368;
   font-family: AvertaStd-Bold;
@@ -363,27 +412,27 @@ button {
   justify-content: space-between;
 }
 
-.addBusButton{
+.addBusButton {
   display: flex;
-width: 206px;
-height: 44px;
-padding: 12px 32px;
-justify-content: center;
-align-items: center;
-flex-shrink: 0;
-border-radius: 32px;
-background: #F5F5FA;
+  width: 206px;
+  height: 44px;
+  padding: 12px 32px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 32px;
+  background: #F5F5FA;
 
-/* Shadow 3 */
-box-shadow: -10px -10px 20px 0px #FFF, 10px 10px 20px 0px rgba(170, 170, 204, 0.50), 5px 5px 10px 0px rgba(170, 170, 204, 0.25), -5px -5px 10px 0px rgba(255, 255, 255, 0.50);
+  /* Shadow 3 */
+  box-shadow: -10px -10px 20px 0px #FFF, 10px 10px 20px 0px rgba(170, 170, 204, 0.50), 5px 5px 10px 0px rgba(170, 170, 204, 0.25), -5px -5px 10px 0px rgba(255, 255, 255, 0.50);
 }
 
-.TittleNumberBox{
+.TittleNumberBox {
   margin-left: 20px;
   margin-top: 25px;
 }
 
-.verticalLine{
+.verticalLine {
   width: 0.704px;
   height: 57.718px;
   background: #9b9b9e;
@@ -394,44 +443,48 @@ box-shadow: -10px -10px 20px 0px #FFF, 10px 10px 20px 0px rgba(170, 170, 204, 0.
 }
 
 /*Notification screen*/
-.notificationCard{
+.notificationCard {
   background-color: white;
   box-shadow: -10px -10px 20px 0px #FFF, 10px 10px 20px 0px rgba(247, 247, 255, 0.5), 5px 5px 10px 0px rgba(170, 170, 204, 0.25), -5px -5px 10px 0px rgba(255, 255, 255, 0.50);
   border-radius: 10px;
 }
-.notificationHeader{
+
+.notificationHeader {
   display: flex;
   justify-content: space-between;
 }
-.avatar-img{
+
+.avatar-img {
   height: 80px;
   width: 80px;
 }
-.time{
+
+.time {
   color: #1D1D1D;
-    text-align: right;
-    font-family: Helvetica;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+  text-align: right;
+  font-family: Helvetica;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
-.imageHeader{
+
+.imageHeader {
   display: flex;
 }
-.name{
-  color: #1D1D1D;
-    font-family: Helvetica;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    text-transform: uppercase;
-}
-.notificationContent{
 
+.name {
+  color: #1D1D1D;
+  font-family: Helvetica;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
 }
-.notificationContent h5{
+
+
+.notificationContent h5 {
   color: #1D1D1D;
   font-family: Helvetica;
   font-size: 12px;
@@ -439,21 +492,25 @@ box-shadow: -10px -10px 20px 0px #FFF, 10px 10px 20px 0px rgba(170, 170, 204, 0.
   font-weight: 700;
   line-height: normal;
 }
-.notificationContent p{
+
+.notificationContent p {
   color: #1D1D1D;
-    font-family: Helvetica;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+  font-family: Helvetica;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
-.notificationContent a{
+
+.notificationContent a {
   color: blue;
 }
-.notificationScreen{
+
+.notificationScreen {
   overflow-y: scroll;
   /* width: 100%; */
 }
+
 .notificationScreen::-webkit-scrollbar {
   width: 0.5em;
 }
@@ -461,95 +518,105 @@ box-shadow: -10px -10px 20px 0px #FFF, 10px 10px 20px 0px rgba(170, 170, 204, 0.
 .notificationScreen::-webkit-scrollbar-thumb {
   background-color: transparent;
 }
+
 /*ENd notification screen*/
 
 /*register screen design*/
 
-.registrationScreen .rightSide{
+.registrationScreen .rightSide {
   background-color: #B1D9DB;
 }
 
-.registrationScreen .row{
+.registrationScreen .row {
   background-color: #B1D9DB;
   height: 100vh;
 }
-.rightSide{
+
+.rightSide {
   background-color: red;
 }
-h1{
+
+h1 {
   color: #000;
-    font-family: sans-serif;
-    font-size: 36px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 136.5%;
-    /* 49.14px */
-    letter-spacing: 3.6px;
-    display: flex;
-    justify-content: center;
-}
-label{
-  color: #5C5C5C;
-    font-family: sans-serif;
-    font-size: 19px;
-    font-style: normal;
-    /* font-weight: 400; */
-    line-height: 136.5%;
-    /* 25.935px */
-    letter-spacing: 1.52px;
+  font-family: sans-serif;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 136.5%;
+  /* 49.14px */
+  letter-spacing: 3.6px;
+  display: flex;
+  justify-content: center;
 }
 
-.socialLogin{
+label {
+  color: #5C5C5C;
+  font-family: sans-serif;
+  font-size: 19px;
+  font-style: normal;
+  /* font-weight: 400; */
+  line-height: 136.5%;
+  /* 25.935px */
+  letter-spacing: 1.52px;
+}
+
+.socialLogin {
   display: flex;
   /* justify-content: space-around; */
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
-.socialLogin button{
+
+.socialLogin button {
   width: 247px;
   background-color: white;
- height: 63px;
- margin: 10px;
-border: 1px solid #D8D3D3;
+  height: 63px;
+  margin: 10px;
+  border: 1px solid #D8D3D3;
 }
-.google-logo{
+
+.google-logo {
   height: 20px;
   width: 20px;
   margin: 5px;
 }
-H4{
+
+H4 {
   color: #797979;
-    text-align: center;
-    font-family: Telex;
-    font-size: 26px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 136.5%;
-    /* 35.49px */
-    letter-spacing: 2.47px;
+  text-align: center;
+  font-family: Telex;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 136.5%;
+  /* 35.49px */
+  letter-spacing: 2.47px;
 }
-.registrationScreen h3{
+
+.registrationScreen h3 {
   width: 509px;
-    height: 118px;
-    flex-shrink: 0;
+  height: 118px;
+  flex-shrink: 0;
   color: #FFF;
-    font-family: Telex;
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 136.5%;
-    /* 43.68px */
-    letter-spacing: 2.56px;
+  font-family: Telex;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 136.5%;
+  /* 43.68px */
+  letter-spacing: 2.56px;
 }
-img.banner-img{
+
+img.banner-img {
   width: 632px;
-    height: 658px;
-    flex-shrink: 0;
-    left: 200px;
-    position: relative;
-    z-index: 999;
+  height: 658px;
+  flex-shrink: 0;
+  left: 200px;
+  position: relative;
+  z-index: 999;
 }
+
 /* .registrationScreen h1{
   display: flex;
   justify-content: flex-start;
