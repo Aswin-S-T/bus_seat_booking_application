@@ -7,6 +7,12 @@ import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 // import VisibilityIcon from "@mui/icons-material/Visibility";
 import { BACKEND_URL } from "../../Api";
+import {TextField, InputAdornment} from "@mui/material";
+import { BsFillEyeSlashFill } from "react-icons/bs";
+import {IoEyeSharp} from "react-icons/io5"
+
+
+
 
 
 
@@ -20,6 +26,21 @@ const Login1 = () => {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [passwordType , setPasswordType] = useState("password");
+  const [passwordInput, setPasswordInput] = useState("");
+
+  const handlePasswordChange = (e) =>{
+    setPasswordInput(e.target.value);
+  }
+
+  const togglePassword = () =>{
+    if(passwordType==="password"){
+      setPasswordType("text")
+      return;
+    }
+    setPasswordType("password")
+  }
+  
 
   const navigate = useNavigate();
 
@@ -87,7 +108,7 @@ const Login1 = () => {
  
            <div className='OR'>-OR-</div>
            <div
-              // className="formBx "
+              // // className="formBx "
               style={{ top: "105px", position: "relative" }}
             >
               {/* <h3 className="form-control">Login Here</h3> */}
@@ -97,34 +118,49 @@ const Login1 = () => {
                   {/* <label for="exampleInputEmail1" className="form-label">
                     Email address
                   </label> */}
-                  <input
+                  <TextField
                     type="email"
                     className="email_input"
                     id="exampleInputEmail1"
+                    variant="standard"
+                    
+                    
+
                     aria-describedby="emailHelp"
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your registered email"
                     required
                   />
-                  <hr className='hr_line'></hr>
+                  {/* <hr className='hr_line'></hr> */}
                   <div id="emailHelp" className="Email_msg">
                     We'll never share your email with anyone else.
                   </div>
                 </div>
-                <div >
+                <div 
+                  style={{width:"200px"}}
+                >
                   {/* <label for="exampleInputPassword1" className="form-label">
                     Password
                   </label> */}
-                  <input
+                  <TextField
                     // type="password"
-                    type={showPassword ? "text" : "password"}
+                    // type={values.showPassword ? "text" : "password"}
                     className="password_input"
                     // className={`form-control ${showPassword ? "show" : "no"}`}
                     id="exampleInputPassword1"
                     placeholder="Password ****"
-                    onChange={(e) => setPassword(e.target.value)}
+                    // onChange={(e) => setPassword(e.target.value)}
                     required
+                    type={passwordType}
+                    onChange={handlePasswordChange}
+                    value={passwordInput}
+                    name="password"
                   />
+                  <div className="input-group-btn">
+                    <button className="btn btn-outline-primary" style={{color: 'blue', fontSize: '14px', position:'relative' , top:'40px',left:'410px'}} onClick={togglePassword}>
+                      {passwordType==="password" ? <BsFillEyeSlashFill /> :<IoEyeSharp />}
+                    </button>
+                  </div>
                   <hr className='hr_line2'></hr>
                   {/* <VisibilityIcon
 										onClick={() => setShowPassword(!showPassword)}

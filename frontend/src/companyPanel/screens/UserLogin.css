@@ -3,10 +3,11 @@
 height: 982px;
 
 background: #B1D9DB;
+overflow: hidden;
 }
 
 .side_div{
-    width: 993px;
+    width: 995px;
 height: 982px;
 flex-shrink: 0;
 border-top-left-radius: 62px;
@@ -18,6 +19,11 @@ margin-right:77px;
 z-index: 1;
 
 
+}
+
+.video{
+  width: 100vw;
+  height:100vh;
 }
 
 .logo_div{
@@ -157,14 +163,15 @@ flex-shrink: 0;
 color: #797979;
 text-align: center;
 font-family: Telex;
-font-size: 26px;
+font-size: 30px;
 font-style: normal;
 font-weight: 400;
 line-height: 136.5%; /* 35.49px */
 letter-spacing: 2.47px;
-position: absolute;
-top: 320px;
-right: 350px;
+position: relative;
+top: 100px;
+left: 370px;
+right:10px;
 }
 
 
@@ -176,13 +183,13 @@ flex-shrink: 0;
 color: #5C5C5C;
 border-radius: 5px;
 font-family: Telex;
-font-size: 19px;
+font-size:  19px;
 font-style: normal;
 font-weight: 400;
 line-height: 136.5%; /* 25.935px */
 letter-spacing: 1.52px;
 position: relative;
-top:70px ;
+top:50px ;
 left: 200px;
 right: px;
 }
@@ -198,7 +205,7 @@ top:60px;
 
 .Email_msg{
   position: absolute;
-  top: 102px;
+  top: 80px;
   left: 200px;
 }
 
@@ -207,15 +214,24 @@ top:60px;
 height: 28px;
 flex-shrink: 0;
 color: #5C5C5C;
+
 font-family: Telex;
 font-size: 19px;
 font-style: normal;
 font-weight: 400;
-line-height: 136.5%; /* 25.935px */
+line-height: 136.5%; /*25.935px */
 letter-spacing: 1.52px;
 position: relative;
-top:90px ;
+top:85px ;
 left: 200px;
+}
+
+.eye_icon{
+  width: 500px;
+  height :500px;
+  color: #fff;
+    text-shadow: 1px 1px 1px #ccc;
+    font-size: 1.5em;
 }
 
 .hr_line2{
@@ -234,7 +250,7 @@ flex-shrink: 0;
 background-color: #A7CCCE;
 font-size: 25px;
 position: absolute;
-top: 220px;
+top: 170px;
 left: 200px;
 }
 
@@ -250,7 +266,7 @@ font-weight: 400;
 line-height: 136.5%; /* 27.3px */
 letter-spacing: 1.6px;
 position: absolute;
-top: 300px;
+top: 240px;
 left: 200px;
 
 }
